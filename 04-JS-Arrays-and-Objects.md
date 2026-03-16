@@ -261,8 +261,8 @@ A **nested loop** is a loop inside another loop.
 Useful when comparing each element of one array with each element of another:
 
 ```jsx
-const bobsFollowers = ["Sk", "Danny", "Karutoh", "James"];
-const tinasFollowers = ["Lily", "Danny", "Sk"];
+const bobsFollowers = ["Maya", "Jake", "Zara", "Omar"];
+const tinasFollowers = ["Zara", "Nina", "Omar"];
 const mutualFollowers = [];
 
 for (let i = 0; i < bobsFollowers.length; i++) {
@@ -273,7 +273,7 @@ for (let i = 0; i < bobsFollowers.length; i++) {
   }
 }
 
-console.log(mutualFollowers); // ["Sk", "Danny"]
+console.log(mutualFollowers); // ["Zara", "Omar"]
 ```
 
 > Be careful with nested loops: they can become slow for large arrays because they compare many combinations.
@@ -292,6 +292,8 @@ while (currentCard !== "spade") {
   currentCard = cards[Math.floor(Math.random() * 4)];
   console.log(currentCard);
 }
+
+while loops evaluate a condition for however long it’s true and the looping stops when the condition is false.
 ```
 
 Make sure the loop condition will eventually become false to avoid **infinite loops**.
