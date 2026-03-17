@@ -208,30 +208,36 @@ for (let counter = 5; counter < 11; counter++) {
 // 5, 6, 7, 8, 9, 10
 
 ```
-Another for example :
+Another `for` loop example:
 
 ```jsx
-  const hobbies = ['singing', 'eating', 'quidditch', 'writing'];
-  
-  for (let i = 0; i < hobbies.length; i++) {
-    console.log(`I enjoy ${hobbies[i]}.`);
-  }
-```
-Notice how the for...of loop has a simpler syntax which is good for readability in larger more complext applications
-Example of a for...of Loop
-```jsx
+const hobbies = ['singing', 'eating', 'quidditch', 'writing'];
 
-  const hobbies = ['singing', 'eating', 'quidditch', 'writing'];
-  
-  for (const hobby of hobbies) {
-    console.log(`I enjoy ${hobby}.`);
-  }
+for (let i = 0; i < hobbies.length; i++) {
+  console.log(`I enjoy ${hobbies[i]}.`);
+}
 ```
-Both Examples print this: 
+
+Example of a `for...of` loop:
+
+```jsx
+const hobbies = ['singing', 'eating', 'quidditch', 'writing'];
+
+for (const hobby of hobbies) {
+  console.log(`I enjoy ${hobby}.`);
+}
+```
+
+Notice how the `for...of` loop has a simpler syntax, which is good for readability in larger, more complex applications.
+
+Both examples print:
+
+```text
 I enjoy singing.
 I enjoy eating.
 I enjoy quidditch.
 I enjoy writing.
+```
 ---
 
 ## Looping in Reverse
