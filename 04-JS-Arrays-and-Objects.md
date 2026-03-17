@@ -206,8 +206,32 @@ for (let counter = 5; counter < 11; counter++) {
   console.log(counter);
 }
 // 5, 6, 7, 8, 9, 10
-```
 
+```
+Another for example :
+
+```jsx
+  const hobbies = ['singing', 'eating', 'quidditch', 'writing'];
+  
+  for (let i = 0; i < hobbies.length; i++) {
+    console.log(`I enjoy ${hobbies[i]}.`);
+  }
+```
+Notice how the for...of loop has a simpler syntax which is good for readability in larger more complext applications
+Example of a for...of Loop
+```jsx
+
+  const hobbies = ['singing', 'eating', 'quidditch', 'writing'];
+  
+  for (const hobby of hobbies) {
+    console.log(`I enjoy ${hobby}.`);
+  }
+```
+Both Examples print this: 
+I enjoy singing.
+I enjoy eating.
+I enjoy quidditch.
+I enjoy writing.
 ---
 
 ## Looping in Reverse
@@ -224,6 +248,7 @@ for (let i = fruits.length - 1; i >= 0; i--) {
 ```
 
 This is especially useful when **removing items** from an array while you iterate, to avoid index issues.
+
 
 ---
 
