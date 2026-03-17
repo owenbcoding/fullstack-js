@@ -255,6 +255,23 @@ for (let i = fruits.length - 1; i >= 0; i--) {
 
 This is especially useful when **removing items** from an array while you iterate, to avoid index issues.
 
+## Iterating Through a string 
+
+The for of loop can also be used to iterate over strings. Heres an example: 
+
+```jsx
+  const username = 'joe';
+  
+  for (const char of username) {
+    console.log(char);
+  }
+
+  Which pints this in the terminal 
+  j
+  o
+  e
+```
+Notice the similarities between iterating through a string and iterating through an array
 
 ---
 
@@ -323,9 +340,9 @@ while (currentCard !== "spade") {
   currentCard = cards[Math.floor(Math.random() * 4)];
   console.log(currentCard);
 }
-
-while loops evaluate a condition for however long it’s true and the looping stops when the condition is false.
 ```
+
+`while` loops evaluate a condition for as long as it’s true, and the looping stops when the condition becomes false.
 
 Make sure the loop condition will eventually become false to avoid **infinite loops**.
 
@@ -369,6 +386,56 @@ Useful for:
 - Searching until you find something.
 - Stopping once a condition is satisfied.
 
+## The `continue` keyword
+
+`continue` is used to skip one iteration of a loop.
+
+Here’s an example:
+
+```jsx
+const strangeBirds = ['Shoebill', 'Cockatrice', 'Basan', 'Cow', 'Terrorbird', 'Parotia', 'Kakapo'];
+
+for (const bird of strangeBirds) {
+  if (bird === 'Cow') {
+    continue;
+  }
+  console.log(bird);
+}
+```
+
+This will iterate through the array and print out every value except the suspected imposter:
+
+```text
+Shoebill
+Cockatrice
+Basan
+Terrorbird
+Parotia
+Kakapo
+```
+
+### Use case: reverse `for` loop
+
+```jsx
+const nums = [1, 2, 3];
+
+for (let i = nums.length - 1; i >= 0; i--) {
+  console.log(nums[i]);
+}
+
+console.log("Time is up!");
+```
+
+This prints:
+
+```text
+3
+2
+1
+Time is up!
+```
+
+This example shows how you can iterate an array in reverse.
 ---
 
 ## Objects (Placeholder)
