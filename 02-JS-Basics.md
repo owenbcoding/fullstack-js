@@ -1,14 +1,22 @@
-# 02 – JavaScript Basics
+# 02 – JavaScript Basics — Lesson 2
 
-These notes collect the core JavaScript fundamentals from your `Full Stack | Js interactive websites` file into one place: syntax, data types, operators, variables, and conditional logic.
+> **Main point:** These notes collect the core JavaScript fundamentals from your `Full Stack | Js interactive websites` file into one place: syntax, data types, operators, variables, and conditional logic.
+>
+> **Code blocks:** Fences use **triple tildes** (e.g. `~~~jsx`, `~~~text`, `~~~html`, `~~~css` … `~~~`) instead of triple backticks if the backtick key is awkward. For short snippets, many Markdown previews also accept HTML: `<pre><code class="language-js">…</code></pre>`.
+
+## 02 – JavaScript Basics — Chapter 2 — 03/23/2026
+
+*Use **Main notes** for explanations and code examples; use **Vocab** and **Important notes** when you review.*
 
 ---
 
-## Introduction to JavaScript & ES6
+## Main notes
+
+### Introduction to JavaScript & ES6
 
 JavaScript is a flexible, powerful language used in both the **browser (front‑end)** and on the **server (back‑end)** via environments like Node.js. It is standardized as **ECMAScript (ES)** and frequently updated with new features.
 
-### Key ideas
+#### Key ideas
 
 - JavaScript runs in all modern browsers and can also run on servers (Node.js).
 - It works alongside **HTML** (structure) and **CSS** (styling) to create **interactive** web pages.
@@ -19,9 +27,21 @@ JavaScript is a flexible, powerful language used in both the **browser (front‑
   - Default parameters
   - Promises and other async tools
 
+#### Try it: Hello World with Node.js
+
+When you run JavaScript outside the browser, you typically create a `.js` file and execute it with **Node.js**. For example, a file `hello.js` containing `console.log('Hello, World!');` can be run from a terminal as `node hello.js`.
+
+![hello.js open in the editor](assets/node-hello-world-hello-js-editor.png)
+
+![Running node hello.js and seeing the printed output](assets/node-hello-world-terminal-output.png)
+
+The same command works in the integrated terminal in VS Code (or another editor):
+
+![VS Code integrated terminal running node hello.js](assets/node-hello-world-vscode-terminal.png)
+
 ---
 
-## Data Types
+### Data Types
 
 JavaScript has **eight fundamental data types**:
 
@@ -36,9 +56,11 @@ JavaScript has **eight fundamental data types**:
 
 The first seven are **primitive types**; **objects** are more complex structures.
 
+![String, number, and boolean values as distinct kinds of data](assets/js-data-types-visual.png)
+
 ---
 
-## Arithmetic Operators
+### Arithmetic Operators
 
 An **operator** is a character (or characters) that performs an action on values.
 
@@ -50,7 +72,7 @@ Common **arithmetic operators**:
 4. Division: `/`
 5. Remainder: `%`
 
-```jsx
+~~~jsx
 console.log(3 + 4);   // 7
 console.log(5 - 1);   // 4
 console.log(4 * 2);   // 8
@@ -60,40 +82,40 @@ console.log(3.5 + 28);   // 31.5
 console.log(2025 - 1969); // 56
 console.log(65 / 240);   // 0.270833...
 console.log(0.2708 * 100); // 27.08
-```
+~~~
 
 When you use `console.log(...)`, JavaScript **evaluates** the expression inside the parentheses and logs the result.
 
 ---
 
-## Strings & Concatenation
+### Strings & Concatenation
 
 You can **append** strings using the `+` operator.
 
-```jsx
+~~~jsx
 console.log("Hello" + "World");      // "HelloWorld"
 console.log("Hello" + " " + "World"); // "Hello World"
-```
+~~~
 
 **Concatenation** – joining multiple strings together with `+`.
 
-### Template literals (ES6)
+#### Template literals (ES6)
 
 Use **backticks** and `${}` for cleaner string interpolation:
 
-```jsx
+~~~jsx
 const name = "Owen";
 const city = "Cork City";
 
 console.log(`My name is ${name}. My favourite city is ${city}.`);
 // "My name is Owen. My favourite city is Cork City."
-```
+~~~
 
 Template literals make it much easier to embed values and expressions inside strings.
 
 ---
 
-## Properties & Methods
+### Properties & Methods
 
 When you create a value in JavaScript, the engine wraps it in an object so it can expose **properties** and **methods**.
 
@@ -102,13 +124,13 @@ When you create a value in JavaScript, the engine wraps it in an object so it ca
 
 You access them with **dot notation**:
 
-```jsx
+~~~jsx
 console.log("Hello".length);   // 5  (string length property)
 console.log("hello".toUpperCase()); // "HELLO"
 console.log("Hey".startsWith("H")); // true
-```
+~~~
 
-### Vocabulary
+#### Vocabulary
 
 - **Property** – a named value (`key: value`) associated with an object, e.g. `length`.
 - **Method** – a function stored on an object, e.g. `toUpperCase()`.
@@ -116,7 +138,7 @@ console.log("Hey".startsWith("H")); // true
 
 ---
 
-## Built‑in Objects
+### Built‑in Objects
 
 JavaScript provides many **built‑in objects** you can use immediately:
 
@@ -126,18 +148,18 @@ JavaScript provides many **built‑in objects** you can use immediately:
 
 Example with `Math`:
 
-```jsx
+~~~jsx
 console.log(Math.random());           // random number between 0 (inclusive) and 1 (exclusive)
 console.log(Math.random() * 50);      // random number between 0 and 50
 console.log(Math.floor(Math.random() * 50)); // random integer between 0 and 49
-```
+~~~
 
 - `Math.random()` – returns a random decimal in \[0, 1).
 - `Math.floor()` – rounds a number **down** to the nearest integer.
 
 ---
 
-## Variables & Declarations
+### Variables & Declarations
 
 A **variable** is a named container for a value stored in memory.
 
@@ -147,19 +169,19 @@ Variables let you:
 2. **Store / update** information.
 3. **Reference** (read) the stored value later.
 
-### `var`, `let`, and `const`
+#### `var`, `let`, and `const`
 
-```jsx
+~~~jsx
 var oldWay = "Pre‑ES6";      // function‑scoped, avoid in modern code
 let count = 1;               // block‑scoped, can be reassigned
 const pi = 3.14159;          // block‑scoped, cannot be reassigned
-```
+~~~
 
 - **`var`** – function‑scoped, hoisted; can be redeclared. Generally avoid.
 - **`let`** – block‑scoped; can be reassigned but not redeclared in the same scope.
 - **`const`** – block‑scoped; **must** be assigned once and cannot be reassigned.
 
-```jsx
+~~~jsx
 let meal = "Enchiladas";
 console.log(meal); // "Enchiladas"
 meal = "Burrito";
@@ -173,15 +195,15 @@ console.log(price); // 350
 const myName = "Gilberto";
 console.log(myName); // "Gilberto"
 // myName = "Other"; // ❌ TypeError: Assignment to constant variable.
-```
+~~~
 
 ---
 
-## Assignment & Update Operators
+### Assignment & Update Operators
 
-### Mathematical assignment
+#### Mathematical assignment
 
-```jsx
+~~~jsx
 let levelUp = 10;
 let powerLevel = 9001;
 let multiplyMe = 32;
@@ -191,50 +213,50 @@ levelUp += 5;     // 15
 powerLevel -= 100; // 8901
 multiplyMe *= 11; // 352
 quarterMe /= 4;   // 288
-```
+~~~
 
-### Increment and decrement
+#### Increment and decrement
 
-```jsx
+~~~jsx
 let a = 10;
 a++;              // 11
 
 let b = 5;
 b--;              // 4
-```
+~~~
 
 - `++` – increases a numeric variable by 1.
 - `--` – decreases a numeric variable by 1.
 
 ---
 
-## String Concatenation with Variables & Interpolation
+### String Concatenation with Variables & Interpolation
 
 Concatenating variables:
 
-```jsx
+~~~jsx
 let myPet = "armadillo";
 console.log("I own a pet " + myPet + "."); 
 // "I own a pet armadillo."
-```
+~~~
 
 Using **template literals** for interpolation:
 
-```jsx
+~~~jsx
 const pet = "armadillo";
 console.log(`I own a pet ${pet}.`);
 // "I own a pet armadillo."
-```
+~~~
 
 Interpolation is almost always **cleaner and safer** than building strings with repeated `+`.
 
 ---
 
-## The `typeof` Operator
+### The `typeof` Operator
 
 `typeof` returns the **data type** (as a string) of a value:
 
-```jsx
+~~~jsx
 const unknown1 = "foo";
 console.log(typeof unknown1); // "string"
 
@@ -249,17 +271,17 @@ console.log(typeof newVariable); // "string"
 
 newVariable = 1;
 console.log(typeof newVariable); // "number"
-```
+~~~
 
 ---
 
-## Conditional Statements
+### Conditional Statements
 
 Conditional statements let your program make **decisions**.
 
-### `if` and `if…else`
+#### `if` and `if…else`
 
-```jsx
+~~~jsx
 let sale = true;
 
 if (sale === true) {
@@ -273,15 +295,15 @@ if (sale) {
 } else {
   console.log("Time to wait for a sale.");
 }
-```
+~~~
 
-### Comparison operators
+#### Comparison operators
 
 - `<`, `>`, `<=`, `>=`
 - `===` – strict equality (same value **and** type)
 - `!==` – strict inequality
 
-```jsx
+~~~jsx
 10 < 12;               // true
 "apples" === "oranges"; // false
 
@@ -292,11 +314,11 @@ if (hungerLevel > 7) {
 } else {
   console.log("We can eat later!");
 }
-```
+~~~
 
 ---
 
-## Logical Operators
+### Logical Operators
 
 Used with booleans to build more complex conditions:
 
@@ -304,7 +326,7 @@ Used with booleans to build more complex conditions:
 - **OR** – `||` – at least one side must be `true`
 - **NOT** – `!` – flips `true` ↔ `false`
 
-```jsx
+~~~jsx
 if (stopLight === "green" && pedestrians === 0) {
   console.log("Go!");
 } else {
@@ -319,11 +341,11 @@ if (day === "Saturday" || day === "Sunday") {
 
 let excited = true;
 console.log(!excited); // false
-```
+~~~
 
 ---
 
-## Truthy & Falsy Values
+### Truthy & Falsy Values
 
 In conditionals, non‑boolean values are **coerced** to `true` or `false`.
 
@@ -337,7 +359,7 @@ In conditionals, non‑boolean values are **coerced** to `true` or `false`.
 
 Everything else is **truthy**.
 
-```jsx
+~~~jsx
 let myVariable = "I exist!";
 
 if (myVariable) {
@@ -354,26 +376,26 @@ if (numberOfApples) {
   console.log("No apples left!");
 }
 // "No apples left!"
-```
+~~~
 
-### Truthy / falsy assignment shortcut
+#### Truthy / falsy assignment shortcut
 
-```jsx
+~~~jsx
 let username = "";
 let defaultName = username || "Stranger";
 
 console.log(defaultName); // "Stranger"
-```
+~~~
 
 `a || b` returns `a` if it’s truthy; otherwise it returns `b`.
 
 ---
 
-## Ternary Operator
+### Ternary Operator
 
 The **ternary operator** is a compact `if…else`.
 
-```jsx
+~~~jsx
 let isNightTime = true;
 
 // Long form
@@ -387,21 +409,21 @@ if (isNightTime) {
 isNightTime
   ? console.log("Turn on the lights!")
   : console.log("Turn off the lights!");
-```
+~~~
 
 Syntax:
 
-```txt
+~~~txt
 condition ? expressionIfTrue : expressionIfFalse
-```
+~~~
 
 ---
 
-## `else if` and `switch`
+### `else if` and `switch`
 
 Use `else if` when you have **multiple** conditions:
 
-```jsx
+~~~jsx
 let stopLight = "yellow";
 
 if (stopLight === "red") {
@@ -413,11 +435,11 @@ if (stopLight === "red") {
 } else {
   console.log("Caution, unknown!");
 }
-```
+~~~
 
 Use `switch` when you are checking **one value against many options**:
 
-```jsx
+~~~jsx
 let groceryItem = "papaya";
 
 switch (groceryItem) {
@@ -435,13 +457,39 @@ switch (groceryItem) {
     break;
 }
 // "Papayas are $1.29"
-```
+~~~
 
 Always include `break` (or `return`) in each `case` to avoid **fall‑through**.
 
 ---
 
-## Quick Review – JS Basics
+## Vocab
+
+- **Lesson focus:** 02 – JavaScript Basics.
+- **ECMAScript / ES6** – the standardized language; “modern JS” often means ES6+ features.
+- **Primitive types** – `number`, `bigint`, `string`, `boolean`, `null`, `undefined`, `symbol`.
+- **`let` / `const`** – block-scoped variables; prefer `const` unless you must reassign.
+- **Template literals** – backtick strings with `${}` interpolation.
+- **Operator** – symbol that performs an operation on values (`+`, `===`, `&&`, etc.).
+- **Truthy / falsy** – values that coerce to true/false in boolean contexts.
+- **Conditional** – `if` / `else if` / `else`, `switch`, ternary `? :`.
+
+---
+
+## Important notes
+
+> **Questions:** Write important questions you have in a box like this.
+
+- Prefer **`const`** by default; use **`let`** when you need to reassign.
+- Use **`===`** and **`!==`** unless you explicitly want coercion.
+- **Template literals** are usually clearer than string concatenation.
+
+
+---
+
+## Chapter 2 summary
+
+When you review your notes, briefly summarize what you learned and what is important to retain from the full page of notes. That helps you internalize the information.
 
 - JavaScript uses **standard data types** (numbers, strings, booleans, etc.) plus complex **objects**.
 - You use **variables** (`let`, `const`) to store and reuse values.
@@ -451,4 +499,3 @@ Always include `break` (or `return`) in each `case` to avoid **fall‑through**.
 - **Built‑in objects** like `Math` provide useful utilities.
 - **Conditionals** (`if`, `else if`, `else`, `switch`) and **logical operators** (`&&`, `||`, `!`) control program flow.
 - **Truthy/falsy** values and the **ternary operator** (`condition ? a : b`) give you powerful shorthand patterns.
-

@@ -1,6 +1,18 @@
-# Full stack | HTML
+# Full stack | HTML — Lesson 1
 
-## HTML - 1#
+> **Main point:** HTML and CSS foundations for full-stack web development. This workbook collects structured lessons—from HTML structure and semantics through CSS layout, flexbox, grid, and responsive **media queries**.
+>
+> **Code blocks:** Fences use **triple tildes** (e.g. `~~~jsx`, `~~~text`, `~~~html`, `~~~css` … `~~~`) instead of triple backticks if the backtick key is awkward. For short snippets, many Markdown previews also accept HTML: `<pre><code class="language-js">…</code></pre>`.
+
+## Full stack | HTML — Chapter 1 — 03/23/2026
+
+*Use **Main notes** for explanations and code examples; use **Vocab** and **Important notes** when you review.*
+
+---
+
+## Main notes
+
+### HTML - 1#
 
 Date - 31/01/2024
 
@@ -11,7 +23,7 @@ Date - 31/01/2024
 
 HTML provides structure to the content that appears on a website, such as images, text, or videos. Right-click on any page on the internet and choose “Inspect” and you will see HTML in a panel on your screen. As you continue learning, you can layer HTML with CSS and JavaScript to create visually compelling and dynamic websites.
 
-### Vocab
+#### Vocab
 
 HTML - Hyper Text Markup Language.
 
@@ -21,14 +33,14 @@ HTML - The computer can interpret raw text that is wrapped in HTML elements.
 
 HyperText - Text displayed on a computer or device that provides access to other documents via hyperlinks.
 
-### Notes
+#### Notes
 
 - HTML is the first step in creating websites.
 - Don't worry if it looks ugly at first.
 
 ---
 
-## HTML Anatomy - 2#
+### HTML Anatomy - 2#
 
 Date - 31/04/2024
 
@@ -36,20 +48,20 @@ HTML is composed of elements these are what structure the webpage and define its
 
 ![chrome_Zszm2h7aDK.png](chrome_Zszm2h7aDK.png)
 
-### Vocab
+#### Vocab
 
 Element - The Content between a tag is called an element
 
 The Body - is the body for the page 
 
-### Notes
+#### Notes
 
 - Elements have open and closing tag
 - Elements have content
 
 ---
 
-## HTML Structure - 3#
+### HTML Structure - 3#
 
 Date - 31/01/2024
 
@@ -57,16 +69,16 @@ The HTML structure is organized as a collection of family tree relationships. Wh
 
 An example of a nested paragraph
 
-```html
+~~~html
 <!-- An example of a nested paragraph -->
 <body>
   <p>This paragraph is a child of the body</p>
 </body>
-```
+~~~
 
 An example of more complicated nesting
 
-```html
+~~~html
 <!-- An example of more complicated nesting -->
 <body>
   <div>
@@ -74,20 +86,20 @@ An example of more complicated nesting
     <p>Sibling to h1, but also grandchild of body</p>
   </div>
 </body>
-```
+~~~
 
 Headings in HTML are used for main headings and subheadings. In HTML, there are six different *headings*, or *heading elements*. They are used for a variety of purposes, from largest to smallest and for different types of content.
 
-```html
+~~~html
 <h1> — used for main headings. All other smaller headings are used for subheadings.
 <h2>
 <h3>
 <h4>
 <h5>
 <h6>
-```
+~~~
 
-### Vocab
+#### Vocab
 
 child - Element inside a parent element.
 
@@ -97,7 +109,7 @@ headings - In HTML, headings are used for main headings and subheadings.
 
 div - Short for “division,” meaning a division of space or sections.
 
-### Notes
+#### Notes
 
 - `div` elements are useful for grouping elements in HTML together.
 - `div` elements don’t have a lot of visual representation, but are useful when you want to apply custom styles to HTML elements.
@@ -105,7 +117,7 @@ div - Short for “division,” meaning a division of space or sections.
 
 ---
 
-## Attributes - 4#
+### Attributes - 4#
 
 Date - 03/02/2024
 
@@ -113,25 +125,25 @@ Attributes allow us to expand an element’s tag and can be used in several ways
 
 An example of an attribute in use 
 
-```html
+~~~html
 <div id="intro">
   <h1>Introduction</h1>
 </div>
-```
+~~~
 
-### Vocab
+#### Vocab
 
 Attribute - A way to expand an element’s tag.
 
 id attribute - This attribute can be used to specify different content such as a `div` id and has several different purposes in HTML.
 
-### Notes
+#### Notes
 
 - Attributes are content added to the opening tag of an element.
 
 ---
 
-## Displaying text - 5#
+### Displaying text - 5#
 
 Date - 03/02/2024
 
@@ -139,18 +151,18 @@ To display text in HTML we would normally use a paragraph tag.
 
 This is an example of how text is displayed using a `p` tag and `span` element:
 
-```html
+~~~html
 <div>
   <h1>Technology</h1>
 </div>
 <div>
   <p><span>Self-driving cars</span> are anticipated to replace up to 2 million jobs over the next two decades.</p>
 </div>
-```
+~~~
 
 It’s best to use a `<span>` element when you want to target a specific piece of content that is *inline*, or on the same line as other text. 
 
-## Styling Text
+### Styling Text
 
 In HTML you can also style text using the `<em>` tag, which emphasizes text, while the `<strong>` tag highlights important text.
 
@@ -159,66 +171,66 @@ In HTML you can also style text using the `<em>` tag, which emphasizes text, whi
 
 This is an example of text being styled.
 
-```html
+~~~html
 <p><strong>The Nile River</strong> is the <em>longest</em> river in the world, measuring over 6,850 kilometers long (approximately 4,260 miles).</p>
-```
+~~~
 
-## Line Breaks
+### Line Breaks
 
 Spacing between code in HTML does not affect the positioning of elements in the browser. If you need to change the spacing in the browser, use the HTML `<br>` tag.
 
-## Unordered Lists
+### Unordered Lists
 
 Unordered lists are a way you can display content in an organized, easy-to-read way using a `<ul>` element. A `ul` element should not hold raw text.
 
 This is an example of a `ul`:
 
-```html
+~~~html
 <ul>
   <li>Limes</li>
   <li>Tortillas</li>
   <li>Chicken</li>
 </ul>
-```
+~~~
 
 Inside of a `ul` tag you put individual list items using the `li` tag.
 
-## Ordered Lists
+### Ordered Lists
 
 Ordered lists are similar to unordered lists, but instead of being bullet-pointed they are numbered. They are useful when you need to list different steps in a process or rank items from first to last.
 
 This is an example of an ordered list
 
-```html
+~~~html
 <ol>
   <li>Preheat the oven to 350 degrees.</li>
   <li>Mix whole wheat flour, baking soda, and salt.</li>
   <li>Cream the butter, sugar in separate bowl.</li>
   <li>Add eggs and vanilla extract to bowl.</li>
 </ol>
-```
+~~~
 
-## Images
+### Images
 
 The `img` tag allows you to add an image to a website. Most elements use both opening and closing tags, but the image element is a self-closing tag, meaning it uses `/` at the end of the tag.
 
 The image tag uses the `src` attribute.
 
-```html
+~~~html
 <img src="image-location.jpg" />
-```
+~~~
 
-## Image Alts
+### Image Alts
 
 When developing websites it’s a good idea to make your site accessible to all kinds of different users. You also need to keep in mind what happens when tech like screen readers encounters image tags.
 
 An example of using image alts:
 
-```html
+~~~html
 <img src="#" alt="A field of yellow sunflowers" />
-```
+~~~
 
-### Vocab
+#### Vocab
 
 Paragraph - Contains a block of plain text.
 
@@ -230,7 +242,7 @@ ul - An organized way to display list items.
 
 Alt - Alternative attribute that describes an image.
 
-### Notes
+#### Notes
 
 - A `ul` should not hold raw text.
 - The `src` in the image is the *uniform resource locator* (URL) of the image.
@@ -241,7 +253,7 @@ Alt - Alternative attribute that describes an image.
 
 ---
 
-## Videos - #
+### Videos - #
 
 Date - 03/02/2024
 
@@ -249,25 +261,25 @@ Similar to the image element, HTML also allows videos to be displayed. Like the 
 
 This is an example of a video element in use
 
-```html
+~~~html
 <!-- The “Video not supported” text appears if a browser does not support video -->
 <video src="myVideo.mp4" width="320" height="240" controls>
   Video not supported
 </video>
-```
+~~~
 
-### Vocab
-
-WORD - definition
+#### Vocab
 
 WORD - definition
 
-### Notes
+WORD - definition
+
+#### Notes
 
 - Important notes
 - 
 
-### **Review**
+#### **Review**
 
 Congratulations on completing the first lesson of HTML! You are well on your way to becoming a skilled web developer.
 
@@ -297,12 +309,12 @@ Date - 09/02/2024
 
 Cascading Style Sheets or *CSS* is a language web developers use to style the HTML content on a web page.
 
-```css
+~~~css
 /* ThiS is an example of linking css pages to the main page in head element */
 <link href="style.css" rel="stylesheet">
-```
+~~~
 
-### Vocab
+#### Vocab
 
 **CSS Anatomy** - The anatomy of [CSS](https://www.codecademy.com/resources/docs/css) style syntax applies to the two methods of incorporating CSS into a web-page:
 
@@ -330,18 +342,18 @@ Inline styles - An inline style is set in a `style` [attribute](https://www.co
 
 *Value*—The second part of the declaration that signifies the value of the property.
 
-### Notes
+#### Notes
 
 - This is an example of  CSS Ruleset - `p { color:blue; }`
 - This is ane example of CSS `<p style="color: blue”`
 - Its important to know inline styles are a quick way of styling an element but they are rarely used when making websites.
 - 
 
-## Internal stylesheet
+### Internal stylesheet
 
 css allows you to code in its own dedicated section with a style element nested inside of the head element this is known as internal styles.
 
-```css
+~~~css
 <head>
   <style>
 		p {
@@ -350,68 +362,68 @@ css allows you to code in its own dedicated section with a style element nested 
     }
   </style>
 </head>
-```
+~~~
 
-## **External Stylesheet**
+### **External Stylesheet**
 
 External style sheets are whats used to link the main index file to an external stylesheet called style.css
 
-```css
+~~~css
 /* Linking the CSS File */
 <link href='style.css' rel='stylesheet'>
 /* Rel means related to that page type */
-```
+~~~
 
-## **Universal selector**
+### **Universal selector**
 
 the *universal selector* selects all elements of *any* type.
 
 The universal selector uses the `*` character in the same place where you specified the type selector in a ruleset, like so:
 
-```css
+~~~css
 * { 
 	margin: 0px;
 	padding: 0px;
 }
-```
+~~~
 
-## Class
+### Class
 
 CSS is not limited to selecting elements by their type. As you know, HTML elements can also have [attributes](https://www.codecademy.com/courses/learn-html/lessons/intro-to-html/exercises/attr-html). When working with HTML and CSS a [*class*](https://www.codecademy.com/resources/docs/html/classes?page_req=catalog) attribute is one of the most common ways to select an element.
 
-```css
+~~~css
 <p class='brand'>Sole Shoe Company</p>
-```
+~~~
 
-## **Multiple Classes**
+### **Multiple Classes**
 
 You can use multiple classes in the same css file, Luckily, it’s possible to add more than one class name to an HTML element’s `class` attribute.
 
-```css
+~~~css
 /* this is an example of multiple classes being used in an element */
 <h1 class='title uppercase'>Top Vacation Spots</h1>
-```
+~~~
 
-## ID
+### ID
 
 Oftentimes it’s important to select a single element with CSS to give it its own unique style. If an HTML element needs to be styled uniquely, we can give it an ID using the `id` attribute.``
 
-```css
+~~~css
 /* this is how you would use an id to style an element*/
 <h1 id='large-title'> ... </h1>
 /* this is selecting the id to style it */
 #large-title {
 
 }
-```
+~~~
 
-## Attribute
+### Attribute
 
 Attributes are used on elements to add extra data or functionality such as `href` or `src` `class` and  `id` 
 
 Attributes can be selected similarly to types, classes, and IDs.``
 
-```css
+~~~css
 /* an example of targeting an a tag in css */
 [href]{
    color: magenta;
@@ -424,9 +436,9 @@ img[src*='winter'] {
 img[src*='summer'] {
   height: 100px;
 }
-```
+~~~
 
-## **Pseudo-class**
+### **Pseudo-class**
 
 These are all examples of pseudo-class selectors in action! In fact, `:focus`, `:visited`, `:disabled`, and `:active` are all pseudo-classes. 
 
@@ -438,13 +450,13 @@ All elements give a different state with pseudo-class
 
 A pseudo-class can be attached to any selector. It is always written as a colon `:` followed by a name. For example `p:hover`.``
 
-```css
+~~~css
 /* this is an example of a pseudo-class in css being used */
 a:hover { 
 }
-```
+~~~
 
-## Specificity
+### Specificity
 
 Specificity is the order by which the browser decides which CSS styles will be displayed.
 
@@ -452,7 +464,7 @@ A best practice in CSS is to style elements while using the lowest degree of spe
 
 IDs are the most specific selector in CSS, followed by classes, and finally, type. For example, consider the following HTML and CSS:``
 
-```css
+~~~css
 <h1 class='headline'>Breaking News</h1>
 
 h1 {
@@ -474,23 +486,23 @@ h5 {
 #author-id {
   color: cornflowerblue;
 }
-```
+~~~
 
-## Chaining
+### Chaining
 
 When writing CSS rules, it’s possible to require an HTML element to have two or more CSS selectors at the same time. This is done by combining multiple selectors, which we will refer to as chaining. For instance, if there was a `special` class for `<h1>` elements, the CSS would look like below:``
 
-```css
+~~~css
 h1.special {
 
 }
-```
+~~~
 
-## **Descendant Combinator**
+### **Descendant Combinator**
 
 In addition to chaining selectors to select elements, CSS also supports selecting elements that are nested within other HTML elements, also known as *descendants*. For instance, consider the following HTML``
 
-```css
+~~~css
 
 <ul class='main-list'>
   <li> ... </li>
@@ -501,15 +513,15 @@ In addition to chaining selectors to select elements, CSS also supports selectin
 .main-list li {
 
 }
-```
+~~~
 
-## **Chaining and Specificity**
+### **Chaining and Specificity**
 
 instead of selecting all `<h5>` elements, you selected only the `<h5>` elements nested inside the `.description` elements. This CSS selector was more specific than writing only `h5`. Adding more than one tag, class, or ID to a CSS selector increases the specificity of the CSS selector.
 
 For instance, consider the following CSS:
 
-```css
+~~~css
 p {
   color: blue;
 }
@@ -521,13 +533,13 @@ p {
 parent-selector descendant-selector {
   declaration
 }
-```
+~~~
 
 **Multiple Selectors**
 
 this is an example of using multiple selectors 
 
-```css
+~~~css
 h1, 
 .menu {
   font-family: Georgia;
@@ -535,17 +547,17 @@ h1,
 or 
 h1, li { 
 }
-```
+~~~
 
 ---
 
-## **Introduction To Visual Rules** - 1#
+### **Introduction To Visual Rules** - 1#
 
 Date - 15/02/2024
 
 Visual Rules is a way of understand how css works better to design websites
 
-### Vocab
+#### Vocab
 
 **Font Family** - the style of font you use
 
@@ -561,38 +573,38 @@ Visual Rules is a way of understand how css works better to design websites
 
 **Important -** `!important` can be applied to specific declarations, instead of full rules. It will override *any* style no matter how specific it is.
 
-### Notes
+#### Notes
 
 - he `text-align` property will align text to the element that holds it, otherwise known as its *parent*.
 - Opacity : from 0 to 1, with 1 representing 100%, or fully visible and opaque, and 0 representing 0%, or fully invisible.
 - The `background-image` property will set the element’s background to display an image.
 
-## **Color and Background Color**
+### **Color and Background Color**
 
 Before discussing the specifics of color, it’s important to make two distinctions about color. Color can affect the following design aspects: 
 
 - Foreground color : Foreground color is the color that an element appears in. For example, when a heading is styled to appear green, the *foreground color* of the heading has been styled.
 - Background color: Conversely, when a heading is styled so that its background appears yellow, the *background color* of the heading has been styled.
 
-## Background Image
+### Background Image
 
-```css
+~~~css
 .main-banner {
   background-image: url('https://www.example.com/image.jpg');
 }
-```
+~~~
 
-## Important
+### Important
 
 An example of the Important property being used
 
-```css
+~~~css
 p {
   color: blue !important;
 }
-```
+~~~
 
-### **Review Visual Rules**
+#### **Review Visual Rules**
 
 - The [`font-family`](https://www.codecademy.com/resources/docs/css/typography/font-family) property defines the typeface of an element.
 - [`font-size`](https://www.codecademy.com/resources/docs/css/typography/font-size) controls the size of text displayed.
@@ -605,7 +617,7 @@ p {
 
 ---
 
-## **Introduction to the Box Model** - 2#
+### **Introduction to the Box Model** - 2#
 
 Date - 15/02/2024
 
@@ -618,18 +630,18 @@ Browsers load html elements with default position elements. But this can sometim
 
 ![Screenshot 2024-02-15 at 10.11.49.png](Screenshot_2024-02-15_at_10.11.49.png)
 
-### Vocab
+#### Vocab
 
 WORD - definition
 
 WORD - definition
 
-### Notes
+#### Notes
 
 - Important notes
 - 
 
-## **The Box Model**
+### **The Box Model**
 
 The model includes the content area’s size (*width* and *height*) 
 
@@ -637,7 +649,7 @@ The model includes the content area’s size (*width* and *height*)
 2. `border`: The thickness and style of the border surrounding the content area and padding.
 3. `margin`: The amount of space between the border and the outside edge of the element.
 
-## Borders
+### Borders
 
 A [*border*](https://www.codecademy.com/resources/docs/css/borders/border) is a line that surrounds an element, like a frame around a painting. [Borders](https://www.codecademy.com/resources/docs/css/borders) can be set with a specific [`width`](https://www.codecademy.com/resources/docs/css/sizing/width), `style`, and
 
@@ -645,18 +657,18 @@ A [*border*](https://www.codecademy.com/resources/docs/css/borders/border) is 
 - `style`—The design of the border. Web browsers can render any of [10 different styles](https://developer.mozilla.org/en-US/docs/Web/CSS/border-style#Values). Some of these styles include: `none`, `dotted`, and `solid`.
 - `color`—The color of the border. Web browsers can render [colors](https://www.codecademy.com/resources/docs/css/colors) using a few different formats, including [140 built-in color keywords](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value).
 
-## **Border Radius**
+### **Border Radius**
 
 Ever since we revealed the borders of boxes, you may have noticed that the borders highlight the true shape of an element’s box: square. Thanks to CSS, a border doesn’t have to be square.
 
-```css
+~~~css
 div.container {
   border: 3px solid blue;
   border-radius: 5px;
 }
-```
+~~~
 
-## **Padding Shorthand**
+### **Padding Shorthand**
 
 A declaration that uses multiple properties as values is known as a *shorthand property*.
 
@@ -667,7 +679,7 @@ Padding shorthand lets you specify all of the `padding` properties as values o
 - [`padding-bottom`](https://www.codecademy.com/resources/docs/css/padding/padding-bottom)
 - [`padding-left`](https://www.codecademy.com/resources/docs/css/padding/padding-left)
     
-    ```css
+    ~~~css
     /* an example of padding short hand */
     p.content-header {
       padding: 6px 11px 4px 9px;
@@ -676,25 +688,25 @@ Padding shorthand lets you specify all of the `padding` properties as values o
     p {
       margin: 6px 10px 5px 12px;
     }
-    ```
+    ~~~
     
 
 In the example above, the four values `6px 11px 4px 9px` correspond to the amount of padding on each side, in a clockwise rotation. In order, it specifies the padding-top value (`6px`), the padding-right value (`11px`), the padding-bottom value (`4px`), and the padding-left value (`9px`) of the content.
 
-## Auto Margin
+### Auto Margin
 
 An example of auto margin being used
 
 In the example above, `margin: 0 auto;` will center the divs in their containing elements. The 0 sets the top and bottom margins to 0 pixels. The `auto` value instructs the browser to adjust the left and right margins until the element is centered within its containing element.
 
-```css
+~~~css
 div.headline {
   width: 400px;
   margin: 0 auto;
 }
-```
+~~~
 
-## **Margin Collapse**
+### **Margin Collapse**
 
 As you have seen, [padding](https://www.codecademy.com/resources/docs/css/padding/padding) is space added inside an element’s [border](https://www.codecademy.com/resources/docs/css/borders/border), while [margin](https://www.codecademy.com/resources/docs/css/margins/margin) is space added outside an element’s border. One additional difference is that top and bottom [margins](https://www.codecademy.com/resources/docs/css/margins), also called vertical margins, *collapse*, while top and bottom padding does not.
 
@@ -702,7 +714,7 @@ As you have seen, [padding](https://www.codecademy.com/resources/docs/css/paddi
 
 Horizontal margins (left and right), like padding, are always displayed and added together. For example, if two divs with ids `#div-one` and `#div-two`, are next to each other, they will be as far apart as the sum of their adjacent margins.
 
-```css
+~~~css
 #img-one {
   margin-right: 20px;
 }
@@ -710,27 +722,27 @@ Horizontal margins (left and right), like padding, are always displayed and adde
 #img-two {
   margin-left: 20px;
 }
-```
+~~~
 
-## **Minimum and Maximum Height and Width**
+### **Minimum and Maximum Height and Width**
 
 Web pages can be viewed through displayed of different screen size 
 
 - [`min-width`](https://www.codecademy.com/resources/docs/css/sizing/min-width)—this property ensures a minimum [width](https://www.codecademy.com/resources/docs/css/sizing/width) of an element’s box.
 - [`max-width`](https://www.codecademy.com/resources/docs/css/sizing/max-width)—this property ensures a maximum width of an element’s box.
 
-## **Resetting Defaults**
+### **Resetting Defaults**
 
 All major web browsers have a default stylesheet they use in the absence of an external stylesheet. These default stylesheets are known as *user agent stylesheets*. In this case, the term [*user agent*](https://en.wikipedia.org/wiki/User_agent) is a technical term for the browse
 
-```css
+~~~css
 * {
   margin: 0;
   padding: 0;
 }
-```
+~~~
 
-## **Visibility**
+### **Visibility**
 
 Elements can be hidden from view with the [`visibility`](https://www.codecademy.com/resources/docs/css/visibility) property.
 
@@ -740,7 +752,7 @@ The `visibility` property can be set to one of the following values:
 - `visible` — displays an element.
 - `collapse` — collapses an element.
 
-```css
+~~~css
 <ul>
   <li>Explore</li>
   <li>Connect</li>
@@ -750,11 +762,11 @@ The `visibility` property can be set to one of the following values:
 .future {
   visibility: hidden;
 }
-```
+~~~
 
 Review / Summary 
 
-### **Review**
+#### **Review**
 
 In this lesson, we covered the four properties of the box model: height and [width](https://www.codecademy.com/resources/docs/css/sizing/width), [padding](https://www.codecademy.com/resources/docs/css/padding/padding), [borders](https://www.codecademy.com/resources/docs/css/borders), and [margins](https://www.codecademy.com/resources/docs/css/margins). Understanding the [box model](https://www.codecademy.com/resources/docs/css/box-model) is an important step towards learning more advanced HTML and CSS topics. Let’s take a minute to review what you learned:
 
@@ -771,7 +783,7 @@ In this lesson, we covered the four properties of the box model: height and [wi
 
 ---
 
-## **The Box Model in DevTools** - 3#
+### **The Box Model in DevTools** - 3#
 
 Date - 16/02/2024
 
@@ -781,13 +793,13 @@ All HTML elements are boxes made up of four components: a content container, pad
 
 ![Untitled](Untitled.png)
 
-### Vocab
+#### Vocab
 
 WORD - definition
 
 WORD - definition
 
-### Notes
+#### Notes
 
 - Important notes
 - 
@@ -796,7 +808,7 @@ WORD - definition
 
 ![Untitled](Untitled%201.png)
 
-## Position
+### Position
 
 he default position of an element can be changed by setting its `position` property. The `position` property can take one of five values:
 
@@ -806,56 +818,56 @@ he default position of an element can be changed by setting its `position` pro
 - `fixed`
 - `sticky`
 
-## **Position: Relative**
+### **Position: Relative**
 
 This value allows you to position an element *relative* to its default static position on the web page.
 
-```css
+~~~css
 .green-box {
   background-color: green;
   position: relative;
 }
-```
+~~~
 
-## Position: Absolute
+### Position: Absolute
 
 Another way of modifying the position of an element is by setting its position to `absolute`.
 
 When an element’s position is set to `absolute`, all other elements on the page will ignore the element and act like it is not present on the page. The element will be positioned relative to its closest positioned parent element, while offset properties can be used to determine the final position from there. Take a look at the image below:
 
-## Position: fixed
+### Position: fixed
 
 When an element’s position is set to `absolute`, as in the last exercise, the element will scroll with the rest of the document when a user scrolls.
 
 We can *fix* an element to a specific position on the page (regardless of user scrolling) by setting its position to `fixed`, and accompanying it with the familiar offset properties [`top`](https://www.codecademy.com/resources/docs/css/position/top), [`bottom`](https://www.codecademy.com/resources/docs/css/position/bottom), [`left`](https://www.codecademy.com/resources/docs/css/position/left), and [`right`](https://www.codecademy.com/resources/docs/css/position/right).
 
-```css
+~~~css
 .title {
   position: fixed;
   top: 0px;
   left: 0px;
 }
-```
+~~~
 
-## Position: Sticky
+### Position: Sticky
 
 The `sticky` value is another position value that keeps an element in the document flow as the user scrolls, but *sticks* to a specified position as the page is scrolled further. This is done by using the `sticky` value along with the familiar offset properties, as well as one new one.
 
-```css
+~~~css
 .box-bottom {
   background-color: darkgreen;
   position: sticky;
   top: 240px;
 }
-```
+~~~
 
-## Z index
+### Z index
 
 The [`z-index`](https://www.codecademy.com/resources/docs/css/position/z-index) property controls how far back or how far forward an element should appear on the web page when elements overlap. This can be thought of as the *depth* of elements, with deeper elements appearing behind shallower elements.
 
 The `z-index` property accepts integer values. Depending on their values, the integers instruct the browser on the order in which elements should be layered on the web page.
 
-```css
+~~~css
 .blue-box {
   background-color: blue;
   position: relative;
@@ -868,39 +880,39 @@ The `z-index` property accepts integer values. Depending on their values, the 
   top: -170px;
   left: 170px;
 }
-```
+~~~
 
 In the example above, we set the `.blue-box` position to `relative` and the z-index to 1. We changed position to `relative`, because the `z-index` property does *not* work on static elements. The z-index of `1` moves the `.blue-box` element forward, because the `z-index` value has not been explicitly specified for the `.green-box` element, which means it has a default `z-index` value of 0. Take a look at the example image below
 
 ![Untitled](Untitled%202.png)
 
-## **Inline Display**
+### **Inline Display**
 
 we’ll cover three values for the `display` property: `inline`, `block`, and `inline-block`
 
 The default `display` for some elements, such as `<em>`, `<strong>`, and `<a>`, is called *inline*.
 
-```css
+~~~css
 To learn more about <em>inline</em> elements, read <a href="#">MDN documentation</a>.
-```
+~~~
 
 CSS display property provides the ability to make any elements an inline element.
 
 An example of display inline
 
-```css
+~~~css
 h1 { 
 display: inline;
 } 
-```
+~~~
 
-## Display: Inline-block
+### Display: Inline-block
 
 The third value for the `display` property is `inline-block`. Inline-block display combines features of both inline and block elements. Inline-block elements can appear next to each other and we can specify their dimensions using the `width` and `height` properties. Images are the best example of default inline-block elements.
 
 An example of inline block being used 
 
-```css
+~~~css
 <div class="rectangle">
   <p>I’m a rectangle!</p>
 </div>
@@ -916,9 +928,9 @@ An example of inline block being used
   width: 200px;
   height: 300px;
 }
-```
+~~~
 
-## Float
+### Float
 
 The `float` property is commonly used for wrapping text around an image. Note, however, that moving elements left or right for layout purposes is better suited for tools like CSS [grid](https://www.codecademy.com/resources/docs/css/grids/grid) and [flexbox](https://www.codecademy.com/resources/docs/css/flexbox), which you’ll learn about later on. 
 
@@ -929,7 +941,7 @@ The `float` property is often set using one of the values below:
 
 ![Untitled](Untitled%203.png)
 
-```css
+~~~css
 .green-section {
   width: 50%;
   height: 150px;
@@ -940,9 +952,9 @@ The `float` property is often set using one of the values below:
   width: 50%;
   float: right;
 }
-```
+~~~
 
-## Clear Property
+### Clear Property
 
 The `float` property can also be used to float multiple elements at once. However, when multiple floated elements have different heights, it can affect their layout on the page. Specifically, elements can “bump” into each other and not allow other elements to properly move to the left or right.
 
@@ -953,7 +965,7 @@ The `clear` property specifies how elements should behave when they bump into 
 - `both`—neither side of the element will touch any other element within the same containing element.
 - `none`—the element can touch either side.
 
-```css
+~~~css
 div {
   width: 200px;
   float: left;
@@ -962,33 +974,33 @@ div {
 div.special {
   clear: left;
 }
-```
+~~~
 
-## Improved styling with css
+### Improved styling with css
 
-### Topography
+#### Topography
 
 <aside>
 💡 How you are able to style and transform font.
 
 </aside>
 
-### Font-face in css
+#### Font-face in css
 
 This how font-face is used in css with font family
 
-```css
+~~~css
 @font-face {
   font-family: 'MyParagraphFont';
   src: url('fonts/Roboto.woff2') format('woff2'),
        url('fonts/Roboto.woff') format('woff'),
        url('fonts/Roboto.ttf') format('truetype');
 }
-```
+~~~
 
 • The `@font-face` at-rule is used as the selector. It’s recommended to define the `@font-face` ruleset at the top of your CSS stylesheet.
 
-## **Breadcrumbs** #
+### **Breadcrumbs** #
 
 Date - 16/03/2024
 
@@ -999,12 +1011,12 @@ Date - 16/03/2024
 
 Think about breadcrumbs 
 
-### **What is primary vs secondary navigation?**
+#### **What is primary vs secondary navigation?**
 
 - The primary navigation system typically contains the most important links and buttons that need to be displayed on every single page of the site.
 - Secondary navigation, or breadcrumb navigation, usually consists of a clickable list of pages or attributes that led to the current page. It can help users understand the extent of the site and also where they are currently
 
-## **Benefit of using breadcrumbs**
+### **Benefit of using breadcrumbs**
 
 Imagine using breadcrumbs as away of finding your way back easier on the site 
 
@@ -1017,7 +1029,7 @@ Instead of having to manually add this to all of the breadcrumbs in our breadcru
 `.breadcrumb li+li::before` is the selector that we want! View the hint if you want more information about how this complicated selector works
 In `styles.css`, find the selector (`.breadcrumb li+li::before`). Set the `content` property to “>” to place the greater than sign between each adjacent breadcrumb.
 
-## **Where do Breadcrumbs Lead**
+### **Where do Breadcrumbs Lead**
 
 In the previous examples, if you clicked on any of the breadcrumbs, it wouldn’t take you to a new page. This is because we have set `href="#"`. With this value, a click on the link will cause the page to scroll to the top of the current page.
 In a full site, these breadcrumbs would link to their respective pages. This is accomplished by setting the `href` property to the appropriate page
@@ -1034,11 +1046,11 @@ It would be confusing for a user if the categories or order of them changed like
 
 `Shoes > Shopping > Flats`
 
-## **Breadcrumb Styles**
+### **Breadcrumb Styles**
 
 The example below makes use of a couple of CSS tricks to create an arrow effect. We’re using the `::before` and `::after` pseudo-elements to add filled rectangles (with empty content) before and after each list item:
 
-```css
+~~~css
 .breadcrumb li a::before, .breadcrumb li a::after {
   content: "";
   position: absolute;
@@ -1050,9 +1062,9 @@ The example below makes use of a couple of CSS tricks to create an arrow effect.
   left: -10px;
   border-left-color: transparent;
 }
-```
+~~~
 
-### Vocab
+#### Vocab
 
 Location - based on hierarchical structure of site
 
@@ -1060,12 +1072,12 @@ Attribute - based on attributes of current page or item
 
 path - unique to a user’s journey on the site
 
-### Notes
+#### Notes
 
 - Important notes
 - 
 
-## Summary
+### Summary
 
 - Use breadcrumbs to indicate where a user is and the extent of the site
 - Breadcrumbs are implemented using unordered lists in HTML with custom CSS styling
@@ -1078,7 +1090,7 @@ path - unique to a user’s journey on the site
 
 ---
 
-## Flexbox - 1/1/2025
+### Flexbox - 1/1/2025
 
 <aside>
 💡
@@ -1089,7 +1101,7 @@ Flexbox is a layout method for arranging items in rows into smaller spaces.
 
 Flexbox’s purpose is to flexibly lay out a set of block or inline element in one dimension, flexbox vertically centres a block of content inside its parent. It will make all the children of a container take up an equal amount of the available width / height regardless of how much width / height is available. It will make all columns in a multiple-column layout adopt the same height even if they contain a different amount of content. 
 
-### Flex box terminology
+#### Flex box terminology
 
 Flex container - definition
 
@@ -1113,7 +1125,7 @@ align-items - is for aligning elements within a single row if the container is f
 
 Flex - direction -  is used to define the direction in which the flex container's items are placed along the main axis
 
-### Notes
+#### Notes
 
 - You need to specify what elements you want as flexible boxes when you do this the boxes will go side by side.
 - Flex box uses values such as justify-content with flex-start / flex-end / flex-centre / space-around / space-between.
@@ -1121,7 +1133,7 @@ Flex - direction -  is used to define the direction in which the flex container'
 - Flex shorthand is a property that provides a way for specifying how elements stretch and shrink, while simplifying the css required
 - You might not want the content to shrink to  fit its container.  But you might want to flex items to move to the next line. you can do this using the flex wrap property.
 
-## Summary : Flexbox
+### Summary : Flexbox
 
 1. `display: flex` changes an element to a block-level container with flex items inside of it.
 2. `display: inline-flex` allows multiple flex containers to appear inline with each other.
@@ -1148,36 +1160,36 @@ Grid can be used to layout the entire web page. Flexbox is mainly used to positi
 
 </aside>
 
-## Creating a Grid:
+### Creating a Grid:
 
 To set up a grid you need a grid container and grid items. The container acts as the parent element that contains grid items as the children and applies overarching styling and positioning to them. 
 
 To make the html element know its a grid container you need to set the elements to the display property to one of two values ( grid - for a block -level grid) or ( inline-grid - for an inline grid ) 
 
-## Creating Columns:
+### Creating Columns:
 
 Grid by default contains only one column. So if you started to add an item it would put on a new row. To change this we need to explicitly define the number of rows and columns in our grid. 
 
 You can define the columns of your grid by using the property ( grid-template-columns ). This property can create two changes first it defines the number of columns in the grid in this case there are two. The second sets the width of each column. 
 
-## Creating Rows:
+### Creating Rows:
 
 To create rows in the grid you need to specify the number and size of the rows, you can do this by using the grid-template-rows. For example [ grid-template-rows: 10% 20% 600px; ]
 
-## Grid Template:
+### Grid Template:
 
 Grid template property can replace the previous two css properties. Both template-rows and template-columns
 
-```css
+~~~css
 .grid {
   display: grid;
   width: 1000px;
   height: 500px;
   grid-template: 200px 300px / 20% 10% 70%;
 }
-```
+~~~
 
-## Fraction:
+### Fraction:
 
 <aside>
 💡
@@ -1188,47 +1200,47 @@ You may already know about using different responsive units such as percentages 
 
 From using the fr unit you can define the size of columns and rows as a fraction of the grid’s length and width. This unit was specifically created for CSS grid. When you use fr it makes it easier to prevent grid items from overlowing the boundaries  of the grid. Heres an example below:
 
-```css
+~~~css
 .grid {
   display: grid;
   width: 1000px;
   height: 400px;
   grid-template: 2fr 1fr 1fr / 1fr 3fr 1fr;
 }
-```
+~~~
 
-## Repeat
+### Repeat
 
 Some properties that define the number of rows and columns in a grid can take a function as a value. repeat() is one of these functions. The repeat() function was created specifically for CSS Grid. See the example below:
 
-```css
+~~~css
 .grid {
   display: grid;
   width: 300px;
   grid-template-columns: repeat(3, 100px);
 }
-```
+~~~
 
 The repeat function will duplicate the specifications for rows or columns a given number of times. Repeat is useful with the fr for example repeat ( 5, 1fr ) would split your table into five equal rows or columns.
 
 The parameter of repeat( ) can have multiple values. for example:
 
-```css
+~~~css
 grid-template-columns: repeat(2, 20px 50px)
-```
+~~~
 
-## Minmax
+### Minmax
 
 unless you define a size all of the grids by default have a fixed size some times you might want the grid to resize based on the size of your web browser. Heres an exmaple of using grid with min max:
 
-```css
+~~~css
 .grid {
   display: grid;
   grid-template-columns: 100px minmax(100px, 500px) 100px;
 }
-```
+~~~
 
-## Grid Gap
+### Grid Gap
 
 <aside>
 💡
@@ -1241,16 +1253,16 @@ CSS grid gap makes a space between each of the grids between every row and colum
 
 Heres an example of  using grid gap in css:
 
-```css
+~~~css
 .grid {
   display: grid;
   width: 320px;
   grid-template-columns: repeat(3, 1fr);
   column-gap: 10px;
 }
-```
+~~~
 
-## Grid items
+### Grid items
 
 <aside>
 💡
@@ -1261,16 +1273,16 @@ A grid *container* contains grid *items,* a container has one grid item for e
 
 heres an example of how youd use grid item that spans all five columns in a five column grid layout: 
 
-```css
+~~~css
 .item1 {
   grid-area: myArea;
 }
 .grid-container {
   grid-template-areas: 'myArea myArea myArea myArea myArea';
 }
-```
+~~~
 
-## Multiple Row Items
+### Multiple Row Items
 
 <aside>
 💡
@@ -1281,16 +1293,16 @@ Using grid-row-start and grid-row-end you can make single grid items take up mul
 
 Heres an example of using multiple rows: 
 
-```css
+~~~css
 .item {
   grid-row-start: 1;
   grid-row-end: 3;
 }
-```
+~~~
 
 In this example, the HTML element of class `item` will take up two rows in the grid, rows 1 and 2. The values that `grid-row-start` and `grid-row-end` accept are *grid lines*.
 
-## Grid Row
+### Grid Row
 
 <aside>
 💡
@@ -1301,15 +1313,15 @@ You can use grid-row as a short hand instead of start and end
 
 Heres a example of using grid-row for short hand 
 
-```css
+~~~css
 .item {
   grid-row: 4 / 6;
 }
-```
+~~~
 
 When an item spans multiple rows or columns using these properties, it will also include the `gap` if any exists.
 
-## Grid Column
+### Grid Column
 
 <aside>
 💡
@@ -1320,15 +1332,15 @@ Grid-column works works identically to the row properties which allow a grid ite
 
 Heres an example of using a grid-column:
 
-```css
+~~~css
 .item {
   grid-column: 4 / span 2;
 }
-```
+~~~
 
 This tells the item to begin in the column 4 and take up two columns of space.
 
-## Grid Area
+### Grid Area
 
 <aside>
 💡
@@ -1339,11 +1351,11 @@ Grid area will set the starting and ending positions for both the rows and colum
 
 Grid area tales four values separated by slashes keeping not of the order importance. This is how grid area interpret those values : grid-row-start / gird-column-start / grid-row-end / gird-row-end / see example below:
 
-```css
+~~~css
 .item {
   grid-area: 2 / 3 / 4 / span 5;
 }
-```
+~~~
 
 In the above example, the item will start on row `2` and end on row `4`, though the 4th row is not actually included, only rows `2` and `3`!
 
@@ -1356,12 +1368,12 @@ Vocab
 • `grid-row-start` / `grid-row-end`  - defines how many rows an item will span
 • `grid-area` - specifies a grid item's size and location within a grid
 
-### Notes
+#### Notes
 
 - Important notes
 - 
 
-## Summary
+### Summary
 
 - `grid-template-columns` defines the number and sizes of the columns of the grid
 - `grid-template-rows` defines the number and sizes of the rows of the grid
@@ -1375,7 +1387,7 @@ Vocab
 
 ---
 
-## Advanced Grid - 1/10/2025
+### Advanced Grid - 1/10/2025
 
 <aside>
 💡
@@ -1386,7 +1398,7 @@ Grid-template-areas property allows you to name sections of your web page to use
 
 Heres an example of using grid to make a simple layout:
 
-```css
+~~~css
 /* html */
 <div class="container">
   <header>Welcome!</header>
@@ -1428,13 +1440,13 @@ nav {
 footer {
   grid-area: footer;
 } 
-```
+~~~
 
 Output from the code above!
 
 ![image.png](image.png)
 
-## Overlapping elements
+### Overlapping elements
 
 <aside>
 💡
@@ -1447,7 +1459,7 @@ overlapping elements is generally done with using the grid-area property with gr
 
 Heres an example with some code.
 
-```css
+~~~css
 /* HTML */
 <div class="container">
   <div class="info">Info!</div> 
@@ -1474,11 +1486,11 @@ img {
   z-index: 5;
 }
 
-```
+~~~
 
 Heres an example of using grid with overlapping elements 
 
-```css
+~~~css
 /* HTML */
 <!DOCTYPE html>
 <html>
@@ -1558,13 +1570,13 @@ footer {
   background-color: dodgerblue;
   grid-area: 9 / 1 / 13 / 7;
 }
-```
+~~~
 
 Heres an example of how the above code works on a page 
 
 ![image.png](image%201.png)
 
-## Justify-Items
+### Justify-Items
 
 <aside>
 💡
@@ -1581,7 +1593,7 @@ Vocab
 • `center` — aligns grid items to the center of the grid area
 • `stretch` — stretches all items to fill the grid area
 
-### Notes
+#### Notes
 
 - `justify-items` aligns grid items along the inline (row) axis within their grid area.
 - Can take `inherit`, `initial`, or `unset` as values
@@ -1589,7 +1601,7 @@ Vocab
 
 An example of using justify-items in code
 
-```css
+~~~css
 /* HTML */
 <main>
   <div class="card">Card 1</div>
@@ -1603,11 +1615,11 @@ main {
   justify-items: center;
 }
 
-```
+~~~
 
 ---
 
-## Justify-content
+### Justify-content
 
 <aside>
 💡
@@ -1618,7 +1630,7 @@ Justify-content is used to position the entire grid along the row axis. This pro
 
 An example of using justify-content in regular css
 
-```css
+~~~css
 /* HTML */
 <main>
   <div class="left">Left</div>
@@ -1633,9 +1645,9 @@ main {
   justify-content: center;
 }
 
-```
+~~~
 
-### Vocab
+#### Vocab
 
 Start  - aligns the grid to the left side of the grid container
 
@@ -1651,14 +1663,14 @@ Space-between - includes an equal amount of space between grid items and no spac
 
 Space-evenly - places an even amount of space between grid items and at either end
 
-### Notes
+#### Notes
 
 - There are several other values that justify-content accepts that you can look at
 - 
 
 ---
 
-## Align Items
+### Align Items
 
 <aside>
 💡
@@ -1669,7 +1681,7 @@ Space-evenly - places an even amount of space between grid items and at either e
 
 The narrower left column is for recording keywords, questions, and recall prompts. The right column is for your actual notes taken during a lecture or class.
 
-### Vocab
+#### Vocab
 
 start  - aligns grid items to the top side of the grid area
 
@@ -1679,7 +1691,7 @@ center - aligns grid items to the center of the grid area
 
 stretch - stretches all items to fill the grid area
 
-### Notes
+#### Notes
 
 - This property is declared on grid containers.
 - There are several other values that `align-items` accepts
@@ -1687,7 +1699,7 @@ stretch - stretches all items to fill the grid area
 
 Heres an example of using align-items in css code
 
-```css
+~~~css
 /* HTML */
 <main>
   <div class="card">Card 1</div>
@@ -1701,11 +1713,11 @@ main {
   align-items: center;
 }
 
-```
+~~~
 
 ---
 
-## Align Content
+### Align Content
 
 <aside>
 💡
@@ -1716,7 +1728,7 @@ main {
 
 For `align-content` to work, the grid container must have extra vertical space. If the grid tracks already fill the container, changing `align-content` won't produce any visual difference.
 
-### Vocab
+#### Vocab
 
 `start` — aligns the grid to the top of the grid container
 
@@ -1730,7 +1742,7 @@ For `align-content` to work, the grid container must have extra vertical space. 
 
 `space-between` — includes an equal amount of space between grid items and no space at either end
 
-### Notes
+#### Notes
 
 - This property is particularly useful for grid layouts that need to adapt to different screen sizes or content amounts
 - The default value is 'stretch', which makes the grid fill the available container space
@@ -1738,7 +1750,7 @@ For `align-content` to work, the grid container must have extra vertical space. 
 
 ---
 
-## Justify Self and Align Self
+### Justify Self and Align Self
 
 <aside>
 💡
@@ -1751,7 +1763,7 @@ The justify-self specifies how an individual element is positioned to the row ax
 
 Align-self specifies an individual element also to the column axis this property will override align-items for any item on which it s declared.
 
-### Vocab
+#### Vocab
 
 `start` — positions grid items on the left side/top of the grid area
 
@@ -1761,7 +1773,7 @@ Align-self specifies an individual element also to the column axis this property
 
 `stretch` — positions grid items to fill the grid area (default)
 
-### Notes
+#### Notes
 
 - The justify-self and align-self properties give you precise control over individual grid item positioning, unlike their container-level counterparts
 - These properties are particularly useful when you need to create exceptions to the overall grid alignment pattern
@@ -1769,7 +1781,7 @@ Align-self specifies an individual element also to the column axis this property
 
 ---
 
-## Implicit vs. Explicit Grid
+### Implicit vs. Explicit Grid
 
 <aside>
 💡
@@ -1778,14 +1790,14 @@ implicit grid in CSS is automatically generated vs explicit grid in CSS is defin
 
 </aside>
 
-## Key Concepts
+### Key Concepts
 
 - **Grid Elements**: Grid elements are defined using various properties to specify their dimensions and quantities.
 - **Static vs. Dynamic Content**:
     - **Static Content**: Works well for fixed layouts, like a business landing page that displays a specific amount of information.
     - **Dynamic Content**: Challenges arise when the amount of information displayed is unknown, such as in online shopping scenarios.
 
-## Implicit Grid
+### Implicit Grid
 
 - **Definition**: The implicit grid is an algorithm in CSS Grid that automatically manages the placement of elements when there are more items than the defined grid can accommodate.
 - **Default Behavior**:
@@ -1793,14 +1805,14 @@ implicit grid in CSS is automatically generated vs explicit grid in CSS is defin
     - New rows are created as needed.
     - Each new row adjusts its height to fit the content it contains.
 
-## Example Scenario
+### Example Scenario
 
 - If a developer sets a grid with **3 columns and 5 rows** (totaling 15 items) but receives **30 search results**, the implicit grid will:
     - Automatically create additional rows to accommodate the extra items.
 
 ---
 
-## Grid auto Rows and Grid Auto Columns
+### Grid auto Rows and Grid Auto Columns
 
 <aside>
 💡
@@ -1812,7 +1824,7 @@ grid-auto-rows specifies the height of implicitly added grid rows. grid-auto-col
 `grid-auto-rows` and `grid-auto-columns` accept the same values as their explicit counterparts,
 `grid-template-rows` and `grid-template-columns`:
 
-```css
+~~~css
 /* HTML */
 <body>
   <div>Part 1</div>   
@@ -1827,9 +1839,9 @@ body {
   grid: repeat(2, 100px) / repeat(2, 150px); 
   grid-auto-rows: 50px;
 }
-```
+~~~
 
-### Vocab
+#### Vocab
 
 Pixels- ( px )
 
@@ -1839,7 +1851,7 @@ fractions  - ( fr )
 
 repeat () - function
 
-### Notes
+#### Notes
 
 - These units (px, %, fr, repeat()) are fundamental for creating flexible and responsive grid layouts
 - Pixels provide precise control but are static, while percentages and fractions offer more fluid responsiveness
@@ -1847,7 +1859,7 @@ repeat () - function
 
 ---
 
-## Grid Auto Flow
+### Grid Auto Flow
 
 <aside>
 💡
@@ -1861,7 +1873,7 @@ You can specify the order in which the rows and columns are rendered.
 You can pair `row` or `column` with `dense`, like this: `grid-auto-flow: row dense;`.
 Here is an example of using `grid-auto-flow: column;` with the `grid-auto-columns` property:
 
-```css
+~~~css
 /* HTML */
 <body>
     <div class='box'>Part 1</div>   
@@ -1879,26 +1891,26 @@ body {
   grid-auto-columns: 65px;
   grid-auto-flow: column;
 }
-```
+~~~
 
 This creates the following on a page
 
 ![image.png](image%202.png)
 
-### Vocab
+#### Vocab
 
 • `row` — specifies the new elements should fill rows from left to right and create new rows when there are too many elements (default)
 • `column` — specifies the new elements should fill columns from top to bottom and create new columns when there are too many elements
 
 `dense` — this keyword invokes an [algorithm](https://www.codecademy.com/resources/docs/general/algorithm) that attempts to fill holes earlier in the grid layout if smaller elements are added
 
-### Important Notes
+#### Important Notes
 
 - `grid-auto-flow` determines whether new elements are placed in rows or columns in the grid layout.
 - The default value is `row`, meaning elements are added from left to right and new rows are created as needed.
 - Adding the `dense` keyword allows the algorithm to fill gaps in the grid by placing smaller elements into empty spaces, optimizing the layout.
 
-## Summary:
+### Summary:
 
 - `grid-template-areas` specifies grid named grid areas.
 - grid layouts are two-dimensional: they have a row, or inline, axis and a column, or block, axis.
@@ -1914,7 +1926,7 @@ This creates the following on a page
 
 ---
 
-## Sizing Elements
+### Sizing Elements
 
 <aside>
 💡
@@ -1925,13 +1937,13 @@ Sizing Elements : **Relative Measurements refers to the ability of a website res
 
 Responsive design normally uses units of px  / rem / em / vh / vw. These relative units allow elements to scale proportionally based on screen size or parent element dimensions, making layouts more flexible and adaptable across different devices.
 
-## Rem:
+### Rem:
 
 Rem Stands for root em. it acts similar to em but instead of checking parent elements to font, it checks the root element.
 
 Below is an example of using em and px for font-size: 
 
-```css
+~~~css
 .heading {
   font-size: 2em;
 }
@@ -1945,43 +1957,43 @@ Below is an example of using em and px for font-size:
 }
 /* The example above shows how to use ems without relying on the default font size of the browser. Instead, a base font size (18px) is defined for all text within the splash-section element. The second CSS rule will set the font size of all h1 elements inside of splash-section relative to the base font of splash-section (18 pixels). The resulting font size of h1 elements will be 27 pixels.*/
 
-```
+~~~
 
-## Percentages: Height & Width
+### Percentages: Height & Width
 
 Percentages are often used to size box-model values, such as width height padding and border and margins, they can also be used to set positioning properties ( top, bottom, left, right )
 
-## Width: Min & Max
+### Width: Min & Max
 
 Websites can lose their integrity when they become too small or large. To solve this issue you can use certain properties such as min-width and max-width
 
 Heres an example of using the properties with a paragraph element
 
-```css
+~~~css
 p {
   min-width: 300px;
   max-width: 600px;
 }
-```
+~~~
 
-## Height: Min & Max
+### Height: Min & Max
 
 You can also set the limit for hight with min and max properties such as min-height and max-height
 
-```css
+~~~css
 p {
   min-height: 150px;
   max-height: 300px;
 }
-```
+~~~
 
-## Scaling Images and Videos
+### Scaling Images and Videos
 
 Websites contain a lot of media such as images and videos it is important make sure that they are scaled properly so that users can correctly view it.
 
 Heres an example of how you would scale media in a div with a class of .container
 
-```css
+~~~css
 .container {
   width: 50%;
   height: 200px;
@@ -1993,9 +2005,9 @@ Heres an example of how you would scale media in a div with a class of .containe
   height: auto;
   display: block;
 }
-```
+~~~
 
-### Vocab
+#### Vocab
 
 pixels - or (px) is a absolute unit of measurement representing a fixed number of screen pixels.
 
@@ -2011,11 +2023,11 @@ vw - is a relative unit representing 1% of the viewport width.
 
 `max-width` — ensures a maximum width for an element.
 
-### Notes
+#### Notes
 
 - Comprehensive guide to CSS covering styling methods, selectors, specificity, box model, flexbox, grid layouts, responsive design, and advanced techniques like pseudo-classes, breadcrumbs, and implicit/explicit grids.
 
-### **Review: Relative Measurements**
+#### **Review: Relative Measurements**
 
 1 min
 
@@ -2036,7 +2048,7 @@ Let’s review what you learned:
 
 ---
 
-## Responsive Design Media Queries - 01/23/2025
+### Responsive Design Media Queries - 01/23/2025
 
 <aside>
 💡
@@ -2045,13 +2057,13 @@ If a website isnt responsive it may look indecipherable on certain devices. This
 
 </aside>
 
-## View port meta tag
+### View port meta tag
 
 The view port meta tag is the total viewable area for a user, This area varies depending on device. The view port is smaller on mobile device and large on desktop. The meta tag is used to instruct the browser on how render the webpages scale and dimensions for example if a site is 960px and the device is 320px wide, adding the viewport meta tag will squish the content down until it is 320px - there is no  need for the user to zoom out and view the whole page.
 
 Heres an example of what the Meta tag looks like in html code
 
-```html
+~~~html
 <!DOCTYPE html> 
 <html lang="en"> 
   <head> 
@@ -2060,9 +2072,9 @@ Heres an example of what the Meta tag looks like in html code
     ...
   </head> 
 
-```
+~~~
 
-## Media queries
+### Media queries
 
 <aside>
 💡
@@ -2073,28 +2085,28 @@ Media queries are used to adapt a websites content to different screen sizes wit
 
 Heres an example of using a media query in css
 
-```css
+~~~css
 @media only screen and (max-width: 480px) {
   body {
     font-size: 12px;
   }
 }
 /* this code will make the bodys font-size 12px if the max-wdith is 480px */
-```
+~~~
 
 The media query defines a rule for screens smaller than 480 pixels (approximately the width of many smartphones in [landscape](https://en.wikipedia.org/wiki/Page_orientation) orientation).
 
 This is another example of using the media query to make the page-title for the css be 270px  when the screen is a size of 480px.
 
-```css
+~~~css
 @media only screen and (max-width : 480px) { 
   .page-title {
     width: 270px;
   }
 }
-```
+~~~
 
-## Range
+### Range
 
 <aside>
 💡
@@ -2105,15 +2117,15 @@ Specific screen sizes can be targeted by setting multiple width and heigh media 
 
 By using multiple widths and heights, a range can be set for a media query. 
 
-```css
+~~~css
 @media only screen and (min-width: 320px) and (max-width: 480px) {
     /* ruleset for 320px - 480px */
 }
-```
+~~~
 
 Heres an example of using multiple media queries
 
-```css
+~~~css
 /* The first media query in the example above will apply CSS rules 
 when the size of the screen meets or exceeds 320 pixels */
 @media only screen and (min-width: 320px) { 
@@ -2127,15 +2139,15 @@ apply additional CSS rules that are not already present in the first. */
     /* ruleset for >= 480px */
 }
 
-```
+~~~
 
-## Dots Per Inch (DPI)
+### Dots Per Inch (DPI)
 
 Another media feature you can target is screen resolution. Many times you would want to supply higher quality media ( images, video etc ). only to users with screens that can support high resolution media. Targeting screen resolution also helps users avoid downloading high res images at their screen may not be able to properly display.
 
 To target by resolution you can use the min-resolution and max-resolution media features as shown bellow.
 
-```css
+~~~css
 /*These media features accept a resolution value in either dots per inch ( dpi ) or dots per centimeter 
 ( dcp ) */
 @media only screen and (min-resolution: 300dpi) {
@@ -2145,9 +2157,9 @@ To target by resolution you can use the min-resolution and max-resolution media 
   }
 }
 
-```
+~~~
 
-## And Operator
+### And Operator
 
 <aside>
 💡
@@ -2158,13 +2170,13 @@ Before we covered multiple media features of the same type in one media query by
 
 Here is an example :
 
-```css
+~~~css
 @media only screen and (max-width: 480px) and (min-resolution: 300dpi) {
     /* CSS ruleset */
 }
-```
+~~~
 
-## Comma Separated List
+### Comma Separated List
 
 <aside>
 💡
@@ -2175,15 +2187,15 @@ Media features can be seperated in a comma sperated list.
 
 Here is an example of how you would separate media features in a comma separated list.
 
-```css
+~~~css
 @media only screen and (min-width: 480px), (orientation: landscape) {
     /* CSS ruleset */
 }
-```
+~~~
 
 Note that the second media feature is `orientation`. The `orientation` media feature detects if the page has more width than height. If a page is wider, it’s considered `landscape`, and if a page is taller, it’s considered `portrait`.
 
-## Breakpoints
+### Breakpoints
 
 <aside>
 💡
@@ -2194,13 +2206,13 @@ The points at which media queries are set are called break points.
 
 Breakpoints are the screen sizes at which your web page does not appear properly. Below is an example if you want to target tablets that are in landscape orientation you can create them like this.
 
-```css
+~~~css
 @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
     /* CSS ruleset */
 }
-```
+~~~
 
-### Vocab
+#### Vocab
 
 @media - This keyword begins a media query rule and instructs the CSS compiler on how parse the rest of the rule.
 
@@ -2210,14 +2222,14 @@ And ( max-width : 480px ) - this part of the rule is called a media feature inst
 
 CSS rules are nested instead of the media query’s curly braces. The rules will be applied when the media query is met.In the example above, the text in the `body` element is set to a `font-size` of `12px` when the user’s screen is less than 480px.
 
-### Notes
+#### Notes
 
 - the `name="viewport"` attribute: tells the browser to display the web page at the same width as its screen
 - he `content` attribute: defines the values for the `<meta>` tag, including `width` and `initial-scale`
 - the `width=device-width` key-value pair: controls the size of the viewport in which it sets the width of the viewport to equal the width of the device
 - the `initial-scale=1` key-value pair: sets the initial zoom level (Read more about scale at [MDN’s viewport documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag#viewport_basics))
 
-## **Summary : Media Queries**
+### **Summary : Media Queries**
 
 Incredible work! You learned how to change the way a website appears on different screens with media queries and breakpoints
 
@@ -2233,3 +2245,27 @@ Throughout this lesson, you learned:
 - The best practice for identifying where media queries should be set is by resizing the browser to determine where the content naturally breaks. Natural breakpoints are found by resizing the browser.
 
 ---
+
+---
+
+## Vocab
+
+- Key terms appear in each lesson’s **Vocab** subsection inside **Main notes** above.
+
+---
+
+## Important notes
+
+> **Questions:** Write important questions you have in a box like this.
+
+- Use **Inspect** in the browser to connect what you see with HTML and CSS.
+- Resize the window to find **natural breakpoints** when you practice media queries.
+
+---
+
+## Chapter 1 summary
+
+When you review your notes, briefly summarize what you learned and what is important to retain from the full page of notes. That helps you internalize the information.
+
+- This file spans many HTML and CSS lessons; each section includes **Notes** and often its own lesson **Summary**.
+- Practice by building small pages and explaining how structure (HTML), presentation (CSS), and behavior (later JavaScript) split responsibilities.

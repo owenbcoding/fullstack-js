@@ -1,18 +1,28 @@
-# 03 – JavaScript Functions & Scope
+# 03 – JavaScript Functions & Scope — Lesson 3
 
-These notes gather all of your function‑related content (and closely related scope concepts) from `Full Stack | Js interactive websites` into a single, organized file.
+> **Main point:** These notes gather all of your function‑related content (and closely related scope concepts) from `Full Stack | Js interactive websites` into a single, organized file.
+>
+> **Code blocks:** Fences use **triple tildes** (e.g. `~~~jsx`, `~~~text`, `~~~html`, `~~~css` … `~~~`) instead of triple backticks if the backtick key is awkward. For short snippets, many Markdown previews also accept HTML: `<pre><code class="language-js">…</code></pre>`.
+
+## 03 – JavaScript Functions & Scope — Chapter 3 — 03/23/2026
+
+*Use **Main notes** for explanations and code examples; use **Vocab** and **Important notes** when you review.*
 
 ---
 
-## What Are Functions?
+## Main notes
+
+### What Are Functions?
 
 A **function** is a reusable block of code that groups together a sequence of statements to perform a specific task.
 
-```jsx
+~~~jsx
 function greetWorld() {
   console.log("Hello, World!");
 }
-```
+~~~
+
+![Parts of a function declaration: keyword, name, and body](assets/js-function-declaration-anatomy.png)
 
 - `function` – keyword that starts a function declaration.
 - `greetWorld` – function **name** (identifier).
@@ -21,15 +31,17 @@ function greetWorld() {
 
 You **call** (invoke) a function by writing its name followed by parentheses:
 
-```jsx
+~~~jsx
 greetWorld(); // "Hello, World!"
-```
+~~~
+
+![The function name in a call is the identifier](assets/js-function-call-identifier.png)
 
 > **Hoisting** – function declarations are hoisted, which means you can technically call them before they appear in the file. It’s usually better style to declare functions before using them.
 
 ---
 
-## Calling Functions
+### Calling Functions
 
 When you call a function:
 
@@ -39,71 +51,81 @@ When you call a function:
 
 You can call the same function as many times as needed:
 
-```jsx
+~~~jsx
 function sayHi() {
   console.log("Hi!");
 }
 
 sayHi(); // "Hi!"
 sayHi(); // "Hi!"
-```
+~~~
+
+![Execution order: call jumps into the body, then resumes after the call](assets/js-function-execution-flow.png)
 
 ---
 
-## Parameters & Arguments
+### Parameters & Arguments
 
 Functions can take **inputs** called **parameters** and use them to perform work.
 
-```jsx
+~~~jsx
 function greet(name) {
   console.log(`Hello, ${name}!`);
 }
 
 greet("Owen");   // "Hello, Owen!"
 greet("Sam");    // "Hello, Sam!"
-```
+~~~
+
+![Parameters in the definition; inside the body they behave like variables](assets/js-function-parameters-diagram.png)
 
 - **Parameters** – names listed in the function definition (`name`).
 - **Arguments** – actual values passed when calling the function (`"Owen"`, `"Sam"`).
 
 The order of arguments must match the order of parameters.
 
-```jsx
+~~~jsx
 function rectangleArea(width, height) {
   return width * height;
 }
 
 const area1 = rectangleArea(10, 6); // width=10, height=6
 const area2 = rectangleArea(4, 3);  // width=4, height=3
-```
+~~~
+
+![Call syntax: identifier and literal arguments](assets/js-function-call-arguments-literals.png)
+
+Variables can be passed as arguments as well:
+
+![Call syntax: identifier and arguments that are variables](assets/js-function-call-arguments-variables.png)
 
 ---
 
-## Default Parameters (ES6)
+### Default Parameters (ES6)
 
 Default parameters allow you to specify a **fallback value** when no argument is passed (or it’s `undefined`).
 
-```jsx
+~~~jsx
 function greeting(name = "stranger") {
   console.log(`Hello, ${name}!`);
 }
 
 greeting("Nick"); // "Hello, Nick!"
 greeting();       // "Hello, stranger!"
-```
+~~~
 
 If the caller provides an argument, it **overrides** the default.
 
 ---
 
-## Return Values
+### Return Values
 
 Functions can **return** values using the `return` keyword. This:
 
 - Ends execution of the function body immediately.
 - Sends a value back to the caller.
 
-```jsx
+~~~jsx
 function rectangleArea(width, height) {
   if (width < 0 || height < 0) {
     return "You need positive integers to calculate area!";
@@ -112,27 +134,29 @@ function rectangleArea(width, height) {
 }
 
 const result = rectangleArea(5, 3); // 15
-```
+~~~
+
+![The return keyword and the value sent back to the caller](assets/js-return-statement-diagram.png)
 
 Any code after a `return` in the same block **will not execute**.
 
 Returned values are often stored in variables:
 
-```jsx
+~~~jsx
 function add(a, b) {
   return a + b;
 }
 
 const sum = add(2, 3); // 5
-```
+~~~
 
 ---
 
-## Helper Functions
+### Helper Functions
 
 You can call a function **inside another function**. When a function is used to support another, we often call it a **helper function**.
 
-```jsx
+~~~jsx
 function multiplyByNineFifths(number) {
   return number * (9 / 5);
 }
@@ -142,7 +166,7 @@ function getFahrenheit(celsius) {
 }
 
 getFahrenheit(15); // 59
-```
+~~~
 
 Breaking a large problem into smaller functions:
 
@@ -152,22 +176,24 @@ Breaking a large problem into smaller functions:
 
 ---
 
-## Function Expressions
+### Function Expressions
 
 Functions can also be created as **expressions** and stored in variables.
 
-```jsx
+~~~jsx
 const greet = function (name) {
   return `Hello, ${name}!`;
 };
 
 console.log(greet("Owen")); // "Hello, Owen!"
-```
+~~~
+
+![Function expression: identifier, function keyword, and parameters](assets/js-function-expression-anatomy.png)
 
 - This is called a **function expression**.
 - If the function has **no name**, it’s an **anonymous** function expression.
 
-```jsx
+~~~jsx
 const greetAnon = function (name) {
   return `Hello, ${name}!`;
 };
@@ -175,17 +201,17 @@ const greetAnon = function (name) {
 const greetNamed = function sayHello(name) {
   return `Hello, ${name}!`;
 };
-```
+~~~
 
 > **Important:** Function expressions are **not hoisted** the way declarations are, so you cannot call them before the line where they’re defined.
 
 ---
 
-## Arrow Functions
+### Arrow Functions
 
 ES6 introduced **arrow functions**, a shorter syntax for function expressions.
 
-```jsx
+~~~jsx
 // Regular function expression
 const rectangleArea = function (width, height) {
   return width * height;
@@ -195,11 +221,13 @@ const rectangleArea = function (width, height) {
 const rectangleAreaArrow = (width, height) => {
   return width * height;
 };
-```
+~~~
+
+![Arrow function: identifier, parameters, and the => token](assets/js-arrow-function-anatomy.png)
 
 For very short functions, you can use a **concise body**:
 
-```jsx
+~~~jsx
 // Long form
 const greaterThanFive = (num) => {
   return num > 5 ? true : false;
@@ -207,18 +235,20 @@ const greaterThanFive = (num) => {
 
 // Concise form
 const greaterThanFiveConcise = num => num > 5 ? true : false;
-```
+~~~
 
 Concise arrow functions:
 
 - Omit parentheses when there is **one parameter**.
 - Omit curly braces and `return` when the body is a **single expression**.
 
+![Single-line (implicit return) vs multi-line (explicit return) arrow functions](assets/js-arrow-function-single-vs-multiline.png)
+
 Arrow functions are very common in modern JS, especially with array methods and React.
 
 ---
 
-## Scope
+### Scope
 
 **Scope** defines where variables can be **accessed** or **referenced** in your program.
 
@@ -227,20 +257,20 @@ You can think of:
 - **Global scope** – variables visible “everywhere”.
 - **Block / local scope** – variables visible only inside a specific block or function.
 
-### Blocks
+#### Blocks
 
 A **block** is any code wrapped in `{}`.
 
-```jsx
+~~~jsx
 const logSkyColor = () => {
   let color = "blue";
   console.log(color); // "blue"
 };
-```
+~~~
 
 Another example:
 
-```jsx
+~~~jsx
 const city = "New York City";
 
 const logCitySkyline = () => {
@@ -250,15 +280,15 @@ const logCitySkyline = () => {
 
 console.log(logCitySkyline());
 // "The stars over the Empire State Building in New York City"
-```
+~~~
 
 ---
 
-## Global Scope
+### Global Scope
 
 Variables declared **outside** of any function or block are in **global scope** and are accessible anywhere.
 
-```jsx
+~~~jsx
 const satellite = "The Moon";
 const galaxy = "The Milky Way";
 const stars = "North Star";
@@ -269,17 +299,17 @@ const callMyNightSky = () => {
 
 console.log(callMyNightSky());
 // "Night Sky: The Moon, North Star, and The Milky Way"
-```
+~~~
 
 Global variables live for the lifetime of the program and can be read from any function, which can be convenient but also risky.
 
 ---
 
-## Block (Local) Scope
+### Block (Local) Scope
 
 Variables declared with `let` or `const` **inside** a block are only available **inside that block**. They are often called **local variables**.
 
-```jsx
+~~~jsx
 const logVisibleLightWaves = () => {
   const lightWaves = "Moonlight";
   console.log(lightWaves); // OK
@@ -287,13 +317,13 @@ const logVisibleLightWaves = () => {
 
 logVisibleLightWaves();
 // console.log(lightWaves); // ❌ ReferenceError: lightWaves is not defined
-```
+~~~
 
 Block scope helps prevent variables from leaking into other parts of your program.
 
 ---
 
-## Scope Pollution
+### Scope Pollution
 
 **Scope pollution** happens when:
 
@@ -313,9 +343,9 @@ Better practice:
 
 ---
 
-## Good Scoping Practice – Example
+### Good Scoping Practice – Example
 
-```jsx
+~~~jsx
 const logVisibleLightWaves = () => {
   let lightWaves = "Moonlight";
   let region = "The Arctic";
@@ -329,7 +359,7 @@ const logVisibleLightWaves = () => {
 };
 
 logVisibleLightWaves();
-```
+~~~
 
 Here:
 
@@ -338,7 +368,33 @@ Here:
 
 ---
 
-## Quick Review – Functions & Scope
+## Vocab
+
+- **Lesson focus:** 03 – JavaScript Functions & Scope.
+- **Function** – reusable block of code invoked with `()`.
+- **Declaration vs expression** – `function f(){}` hoists; `const f = function(){}` does not.
+- **Arrow function** – concise syntax; lexical `this` behavior differs from classic functions.
+- **Parameter / argument** – placeholder in definition vs value passed at call time.
+- **`return`** – sends a value back and stops the function.
+- **Scope** – where a variable is visible (global, function, block).
+- **Shadowing** – inner declaration hides an outer name in its block.
+
+---
+
+## Important notes
+
+> **Questions:** Write important questions you have in a box like this.
+
+- Declare functions **before** use when possible, even though declarations **hoist**.
+- Keep variables **as local as possible** to avoid **scope pollution**.
+- **`return`** ends the function; missing `return` means **`undefined`**.
+
+
+---
+
+## Chapter 3 summary
+
+When you review your notes, briefly summarize what you learned and what is important to retain from the full page of notes. That helps you internalize the information.
 
 - A **function declaration** uses `function name(...) { ... }` and is hoisted.
 - **Function expressions** assign a function to a variable; they are **not** hoisted.
@@ -347,7 +403,3 @@ Here:
 - Use `return` to send values back from functions and stop execution of the function body.
 - **Helper functions** break complex problems into simpler, reusable pieces.
 - **Scope** determines where variables are visible:
-  - **Global scope** – visible everywhere.
-  - **Block / local scope** – visible only inside a block or function.
-- Avoid **scope pollution** by limiting global variables and using tight, clear scoping.
-
