@@ -549,7 +549,7 @@ Another example of using the dot notation in javascript
 This is how you would use brakcet notation to access a objects property,
 First you pass in the property name inside square brackets as a string.
 
-![Dot notation for accessing object properties](assets/objects_lesson_EX4.svg)
+![Bracket notation for accessing object properties](assets/objects_lesson_EX4.svg)
 
 You should use brakacet notation when accessing keys that arent valid identifier names,
 
