@@ -543,7 +543,7 @@ Another example of using the dot notation in javascript
   planetArray.flightpath;
 ~~~
 
-# Dot notation 
+# Bracket notation 
 ## Notes
 
 This is how you would use brakcet notation to access a objects property,
