@@ -553,6 +553,26 @@ First you pass in the property name inside square brackets as a string.
 
 You should use brakacet notation when accessing keys that arent valid identifier names,
 
+```js
+  let spaceship = {
+    'Fuel Type': 'Turbo Fuel',
+    'Active Duty': true,
+    homePlanet: 'Earth',
+    numCrew: 5
+  };
+  spaceship['Active Duty'];   // Returns true
+  spaceship['Fuel Type'];   // Returns 'Turbo Fuel'
+  spaceship['numCrew'];   // Returns 5
+  spaceship['!!!!!!!!!!!!!!!'];   // Returns undefined
+```
+
+You can also use a variable inside the brackets to select the keys of an object is good when working with functions
+
+```js
+let returnAnyProp = (objectName, propName) => objectName[propName];
+ 
+returnAnyProp(spaceship, 'homePlanet'); // Returns 'Earth'
+```
 
 #### Looping over objects
 
