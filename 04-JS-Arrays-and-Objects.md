@@ -543,6 +543,17 @@ Another example of using the dot notation in javascript
   planetArray.flightpath;
 ~~~
 
+# Dot notation 
+## Notes
+
+This is how you would use brakcet notation to access a objects property,
+First you pass in the property name inside square brackets as a string.
+
+![Dot notation for accessing object properties](assets/objects_lesson_EX4.svg)
+
+You should use brakacet notation when accessing keys that arent valid identifier names,
+
+
 #### Looping over objects
 
 **`for...in`** iterates over enumerable **keys** (watch out for inherited keys on plain objects; many style guides prefer the approaches below for “own” properties only).
