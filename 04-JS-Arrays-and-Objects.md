@@ -582,7 +582,7 @@ updated them after we created them!
 You can use dot notation (.) or bracket nation ([]) with the assignment operator = to add a new key-value pair to a object or change
 a current property.
 
-object_property assignment image here 
+![bject_property assignment image here](assets/object_property_assignment.svg)
 
 One of two things can happen with a property assignment 
 - if a property exists on the object which ever value it held before will be replace with a new assigned value
@@ -601,8 +601,15 @@ Heres an example of doing the above
 
 Heres how you would use the delete operator in property assignment!
 ```js
-
+const spaceship = {
+  'Fuel Type': 'Turbo Fuel',
+  homePlanet: 'Earth',
+  mission: 'Explore the universe' 
+};
+ 
+delete spaceship.mission;  // Removes the mission property
 ```
+
 
 #### Looping over objects
 
