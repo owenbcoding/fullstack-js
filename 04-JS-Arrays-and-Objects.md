@@ -609,8 +609,32 @@ const spaceship = {
  
 delete spaceship.mission;  // Removes the mission property
 ```
+# Methods
+## 3/31/2026
+When a function is stored as a value on an object, it’s called a method.
+An object’s properties describe what it has (its data), and its methods describe what it does (its behavior).
 
+Object methods might already feel familiar because you’ve been using them all along.
+For example, console is a global JavaScript object, and log() is one of its methods.
+Math is another global object, and floor() is a method on it too.
 
+You can add methods to an object literal using regular key-value pairs.
+The key becomes the method name, and the value is a function expression (often anonymous).
+
+With ES6 method shorthand, you can define object methods without writing the colon or the function keyword.
+
+```js
+const alienShip = {
+  invade: function () { 
+    console.log('Hello! We have come to dominate your planet. Instead of Earth, it shall be called New Xaculon.')
+  }
+};
+```
+
+You call an object method by writing the object name, a dot, and then the method name with parentheses.
+```js
+alienShip.invade(); // Prints 'Hello! We have come to dominate your planet. Instead of Earth, it shall be called New Xaculon.'
+```
 #### Looping over objects
 
 **`for...in`** iterates over enumerable **keys** (watch out for inherited keys on plain objects; many style guides prefer the approaches below for “own” properties only).
