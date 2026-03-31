@@ -638,7 +638,8 @@ alienShip.invade(); // Prints 'Hello! We have come to dominate your planet. Inst
 
 # Nested Objects
 ## 3/31/2026
-
+In real applications, objects are often nested.
+An object can contain another object as a property, and that nested object can have a property that holds an array of more objects.
 
 #### Looping over objects
 
