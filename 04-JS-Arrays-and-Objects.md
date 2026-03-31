@@ -645,6 +645,48 @@ In our spaceship object, we can add a crew object to store the people who run th
 Each crew member can be its own object with properties like name and degree, plus role-specific methods.
 We can nest other objects too, like telescope, or group computer-related details inside a parent nanoelectronics object.
 
+```js
+    const spaceship = {
+      telescope: {
+        yearBuilt: 2018,
+        model: '91031-XLT',
+        focalLength: 2032 
+      },
+      crew: {
+        captain: { 
+          name: 'Sandra', 
+          degree: 'Computer Engineering', 
+          encourageTeam() { console.log('We got this!') } 
+        }
+      },
+      engine: {
+        model: 'Nimbus2000'
+      },
+      nanoelectronics: {
+        computer: {
+          terabytes: 100,
+          monitors: 'HD'
+        },
+        'back-up': {
+          battery: 'Lithium',
+          terabytes: 50
+        }
+      }
+    };
+```
+You can chain operators to access nested properties.
+At each level, choose the operator that matches the data type you’re working with.
+A helpful strategy is to evaluate the expression left to right—like the computer does—so each step is smaller and easier to follow.
+
+```js
+  spaceship.nanoelectronics['back-up'].battery; // Returns 'Lithium'
+```
+In that code:
+
+The computer first evaluates spaceship.nanoelectronics, which returns an object containing back-up and computer.
+Next, ['back-up'] accesses the back-up object.
+Then, .battery reads the battery property on that object and returns 'Lithium'.
+
 #### Looping over objects
 
 **`for...in`** iterates over enumerable **keys** (watch out for inherited keys on plain objects; many style guides prefer the approaches below for “own” properties only).
