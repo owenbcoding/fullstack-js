@@ -635,6 +635,11 @@ You call an object method by writing the object name, a dot, and then the method
 ```js
 alienShip.invade(); // Prints 'Hello! We have come to dominate your planet. Instead of Earth, it shall be called New Xaculon.'
 ```
+
+# Nested Objects
+## 3/31/2026
+
+
 #### Looping over objects
 
 **`for...in`** iterates over enumerable **keys** (watch out for inherited keys on plain objects; many style guides prefer the approaches below for “own” properties only).
