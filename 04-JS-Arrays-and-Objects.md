@@ -513,7 +513,7 @@ spaceship.color = "gold";
 
 **Bracket notation** — required for dynamic keys or non-identifier keys:
 
-~~~jsx
+~~~js
 console.log(spaceship["Fuel Type"]); // "diesel"
 
 const key = "color";
@@ -524,7 +524,7 @@ Assignment works the same way: `spaceship["Fuel Type"] = "electric";`
 
 Another example of using the dot notation in javascript
 
-~~~jsx
+~~~js
   homePlanet: 'Earth',
   color: 'silver',
   'Fuel Type': 'Turbo Fuel',
@@ -544,7 +544,7 @@ Another example of using the dot notation in javascript
 ~~~
 
 # Bracket notation 
-## Notes
+## 3/30/2026
 
 This is how you would use brakcet notation to access a objects property,
 First you pass in the property name inside square brackets as a string.
@@ -572,6 +572,36 @@ You can also use a variable inside the brackets to select the keys of an object 
 let returnAnyProp = (objectName, propName) => objectName[propName];
  
 returnAnyProp(spaceship, 'homePlanet'); // Returns 'Earth'
+```
+# Property Assignment 
+## 3/31/2026
+
+Once an object is defined you arent stuck with the properties that were wrote, Objects are mutable which means you can
+updated them after we created them!
+
+You can use dot notation (.) or bracket nation ([]) with the assignment operator = to add a new key-value pair to a object or change
+a current property.
+
+object_property assignment image here 
+
+One of two things can happen with a property assignment 
+- if a property exists on the object which ever value it held before will be replace with a new assigned value
+- if there was no property with that name, a new property will be added to the object.
+
+! its important to know that even tho you cant reassign a object that is declared with const you can still mutate it which means
+you can add new properties and change the properties that are there.
+
+Heres an example of doing the above
+```js
+  const spaceship = {type: 'shuttle'};
+  spaceship = {type: 'alien'}; // TypeError: Assignment to constant variable.
+  spaceship.type = 'alien'; // Changes the value of the type property
+  spaceship.speed = 'Mach 5'; // Creates a new key of 'speed' with a value of 'Mach 5'
+```
+
+Heres how you would use the delete operator in property assignment!
+```js
+
 ```
 
 #### Looping over objects
