@@ -641,6 +641,10 @@ alienShip.invade(); // Prints 'Hello! We have come to dominate your planet. Inst
 In real applications, objects are often nested.
 An object can contain another object as a property, and that nested object can have a property that holds an array of more objects.
 
+In our spaceship object, we can add a crew object to store the people who run the craft.
+Each crew member can be its own object with properties like name and degree, plus role-specific methods.
+We can nest other objects too, like telescope, or group computer-related details inside a parent nanoelectronics object.
+
 #### Looping over objects
 
 **`for...in`** iterates over enumerable **keys** (watch out for inherited keys on plain objects; many style guides prefer the approaches below for “own” properties only).
