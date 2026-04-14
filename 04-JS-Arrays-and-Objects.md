@@ -724,7 +724,29 @@ let firstPassenger = spaceship.passengers[0];
 
 ```
 
-#### Looping over objects
+# Pass By Reference
+## 04/07/2026
+
+Pass by reference means when you pass a variable assigned to an object into a function as a argument
+the computer interperts the parameter name as pointing to the space in memory holding that object, As a result functions that change ob ject poperties actually mutaute the object permanently
+even when the object is assigned to a const_ variable
+
+```js
+const spaceship = {
+  homePlanet : 'Earth',
+  color : 'silver'
+};
+ 
+let paintIt = obj => {
+  obj.color = 'glorious gold'
+};
+ 
+paintIt(spaceship);
+ 
+spaceship.color // Returns 'glorious gold'
+ 
+```
+# Looping over objects
 
 **`for...in`** iterates over enumerable **keys** (watch out for inherited keys on plain objects; many style guides prefer the approaches below for “own” properties only).
 
