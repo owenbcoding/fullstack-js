@@ -452,19 +452,21 @@ This example shows how you can iterate an array in reverse.
 
 ### Objects
 
+#### Introduction to Objects
+
 An **object** is a **non-primitive** value that groups related data (and optionally behavior) under one variable. Unlike arrays, plain objects are **unordered**: you care about **named properties**, not numeric positions.
 
 Objects store data as **key–value pairs**. Each **key** (also called a **property name**) labels a piece of data; the **value** can be any type (string, number, boolean, array, another object, function, etc.).
 
 ![Each key is associated with one value](assets/js-object-key-value-concept.svg)
 
-#### Why use objects?
+**Why use objects?**
 
 - Model real-world things (a user, a product, a spaceship) as one structure.
 - Pass a single argument into a function instead of many separate variables.
 - Keep related settings or API responses in one place.
 
-#### Object literals
+#### Creating Object Literals
 
 The usual way to create an object is an **object literal**: curly braces `{}` with zero or more properties inside.
 
@@ -484,10 +486,107 @@ This diagram matches the same idea: the variable holds one **object**; each line
 
 ![Object literal: keys, values, and properties](assets/js-object-literal-spaceship-properties.svg)
 
-#### Properties and methods
+#### Accessing Properties
 
-- A **property** is a key and its value together.
-- If a property’s value is a **function**, that property is often called a **method** (behavior on the object).
+Use **dot notation** to **read** a property when the key is a valid identifier:
+
+~~~jsx
+console.log(spaceship.color); // "silver"
+~~~
+
+![Dot notation for accessing object properties](assets/dot-notation-js.svg)
+
+Dot notation exercise — read values from a `spaceship` object:
+
+~~~js
+const spaceship = {
+  homePlanet: 'Earth',
+  color: 'silver',
+  'Fuel Type': 'Turbo Fuel',
+  numCrew: 5,
+  flightPath: ['Venus', 'Mars', 'Saturn']
+};
+
+let crewCount = spaceship.numCrew;
+let planetArray = spaceship.flightPath;
+~~~
+
+#### Bracket Notation
+
+Use **bracket notation** when the key is not a valid identifier, or when you need a **dynamic** key (variable or expression).
+
+Pass the property name inside square brackets (usually as a string).
+
+![Bracket notation for accessing object properties](assets/objects_lesson_EX4.svg)
+
+Use bracket notation for keys that are not valid identifier names:
+
+```js
+let spaceship = {
+  'Fuel Type': 'Turbo Fuel',
+  'Active Duty': true,
+  homePlanet: 'Earth',
+  numCrew: 5
+};
+spaceship['Active Duty'];   // Returns true
+spaceship['Fuel Type'];   // Returns 'Turbo Fuel'
+spaceship['numCrew'];   // Returns 5
+spaceship['!!!!!!!!!!!!!!!'];   // Returns undefined
+```
+
+You can use a variable inside the brackets — useful in functions:
+
+```js
+const key = "color";
+console.log(spaceship[key]); // same as spaceship.color when key is "color"
+
+let returnAnyProp = (objectName, propName) => objectName[propName];
+
+returnAnyProp(spaceship, 'homePlanet'); // Returns 'Earth'
+```
+
+#### Property Assignment
+
+Once an object is defined, you are not stuck with the properties you started with. Objects are **mutable**: you can update them after creation.
+
+Use **dot notation** (`.`) or **bracket notation** (`[]`) with the assignment operator `=` to add a new key–value pair or change an existing property.
+
+![Property assignment](assets/object_property_assignment.svg)
+
+One of two things can happen:
+
+- If a property already exists, its previous value is replaced.
+- If there is no property with that name, a new property is added.
+
+**Important:** you cannot reassign a `const` binding to a different object, but you can still **mutate** the object (add or change properties).
+
+~~~jsx
+spaceship.color = "gold";
+spaceship["Fuel Type"] = "electric";
+~~~
+
+```js
+const spaceship = {type: 'shuttle'};
+spaceship = {type: 'alien'}; // TypeError: Assignment to constant variable.
+spaceship.type = 'alien'; // Changes the value of the type property
+spaceship.speed = 'Mach 5'; // Creates a new key 'speed' with value 'Mach 5'
+```
+
+Remove a property with **`delete`**:
+
+```js
+const spaceship = {
+  'Fuel Type': 'Turbo Fuel',
+  homePlanet: 'Earth',
+  mission: 'Explore the universe'
+};
+
+delete spaceship.mission;  // Removes the mission property
+```
+
+#### Methods
+
+When a function is stored as a value on an object, it is called a **method**. An object’s properties describe what it has (its data), and its methods describe what it does (its behavior).
 
 ~~~jsx
 const dog = {
@@ -500,163 +599,44 @@ const dog = {
 dog.bark(); // "Woof!"
 ~~~
 
-#### Accessing and updating values
+The `bark()` syntax above is **ES6 method shorthand** on the object literal (equivalent to `bark: function () { ... }`).
 
-**Dot notation** — clear when the key is a valid identifier:
+Object methods might already feel familiar: `console` is a global object and `log()` is a method; `Math.floor()` is another example.
 
-~~~jsx
-console.log(spaceship.color); // "silver"
-spaceship.color = "gold";
-~~~
-
-![Dot notation for accessing object properties](assets/dot-notation-js.svg)
-
-**Bracket notation** — required for dynamic keys or non-identifier keys:
-
-~~~js
-console.log(spaceship["Fuel Type"]); // "diesel"
-
-const key = "color";
-console.log(spaceship[key]); // same as spaceship.color
-~~~
-
-Assignment works the same way: `spaceship["Fuel Type"] = "electric";`
-
-Another example of using the dot notation in javascript
-
-~~~js
-  homePlanet: 'Earth',
-  color: 'silver',
-  'Fuel Type': 'Turbo Fuel',
-  numCrew: 5,
-  flightPath: ['Venus', 'Mars', 'Saturn']
-  };
-
-  // Write your code below
-  //1. Let’s use the dot operator to access the value of numCrew from the spaceship object in the code editor. Create a variable crewCount and assign the spaceship object’s numCrew property to it.
-  let crewCount = spaceship.numCrew;
-
-  let planetArray = spaceship.flightPath;
-
-
-// Again, using the dot operator, create a variable planetArray and assign the spaceship object’s flightPath property to it.
-  planetArray.flightpath;
-~~~
-
-# Bracket notation 
-## 3/30/2026
-
-This is how you would use brakcet notation to access a objects property,
-First you pass in the property name inside square brackets as a string.
-
-![Bracket notation for accessing object properties](assets/objects_lesson_EX4.svg)
-
-You should use brakacet notation when accessing keys that arent valid identifier names,
-
-```js
-  let spaceship = {
-    'Fuel Type': 'Turbo Fuel',
-    'Active Duty': true,
-    homePlanet: 'Earth',
-    numCrew: 5
-  };
-  spaceship['Active Duty'];   // Returns true
-  spaceship['Fuel Type'];   // Returns 'Turbo Fuel'
-  spaceship['numCrew'];   // Returns 5
-  spaceship['!!!!!!!!!!!!!!!'];   // Returns undefined
-```
-
-You can also use a variable inside the brackets to select the keys of an object is good when working with functions
-
-```js
-let returnAnyProp = (objectName, propName) => objectName[propName];
- 
-returnAnyProp(spaceship, 'homePlanet'); // Returns 'Earth'
-```
-# Property Assignment 
-## 3/31/2026
-
-Once an object is defined you arent stuck with the properties that were wrote, Objects are mutable which means you can
-updated them after we created them!
-
-You can use dot notation (.) or bracket nation ([]) with the assignment operator = to add a new key-value pair to a object or change
-a current property.
-
-![bject_property assignment image here](assets/object_property_assignment.svg)
-
-One of two things can happen with a property assignment 
-- if a property exists on the object which ever value it held before will be replace with a new assigned value
-- if there was no property with that name, a new property will be added to the object.
-
-! its important to know that even tho you cant reassign a object that is declared with const you can still mutate it which means
-you can add new properties and change the properties that are there.
-
-Heres an example of doing the above
-```js
-  const spaceship = {type: 'shuttle'};
-  spaceship = {type: 'alien'}; // TypeError: Assignment to constant variable.
-  spaceship.type = 'alien'; // Changes the value of the type property
-  spaceship.speed = 'Mach 5'; // Creates a new key of 'speed' with a value of 'Mach 5'
-```
-
-Heres how you would use the delete operator in property assignment!
-```js
-const spaceship = {
-  'Fuel Type': 'Turbo Fuel',
-  homePlanet: 'Earth',
-  mission: 'Explore the universe' 
-};
- 
-delete spaceship.mission;  // Removes the mission property
-```
-# Methods
-## 3/31/2026
-When a function is stored as a value on an object, it’s called a method.
-An object’s properties describe what it has (its data), and its methods describe what it does (its behavior).
-
-Object methods might already feel familiar because you’ve been using them all along.
-For example, console is a global JavaScript object, and log() is one of its methods.
-Math is another global object, and floor() is a method on it too.
-
-You can add methods to an object literal using regular key-value pairs.
-The key becomes the method name, and the value is a function expression (often anonymous).
-
-With ES6 method shorthand, you can define object methods without writing the colon or the function keyword.
+You can add methods to an object literal with regular key–value pairs (the key is the method name, the value is a function expression).
 
 ```js
 const alienShip = {
-  invade: function () { 
+  invade: function () {
     console.log('Hello! We have come to dominate your planet. Instead of Earth, it shall be called New Xaculon.')
   }
 };
 ```
 
-You call an object method by writing the object name, a dot, and then the method name with parentheses.
+Call a method with the object name, a dot, and the method name with parentheses:
+
 ```js
 alienShip.invade(); // Prints 'Hello! We have come to dominate your planet. Instead of Earth, it shall be called New Xaculon.'
 ```
 
-# Nested Objects
-## 3/31/2026
-In real applications, objects are often nested.
-An object can contain another object as a property, and that nested object can have a property that holds an array of more objects.
+#### Nested Objects
 
-In our spaceship object, we can add a crew object to store the people who run the craft.
-Each crew member can be its own object with properties like name and degree, plus role-specific methods.
-We can nest other objects too, like telescope, or group computer-related details inside a parent nanoelectronics object.
+In real applications, objects are often nested. An object can contain another object as a property, and that nested object can have a property that holds an array of more objects.
+
+In a spaceship object, you can add a `crew` object to store the people who run the craft. Each crew member can be its own object with properties like `name` and `degree`, plus role-specific methods. You can nest other objects too (for example `telescope`), or group related details under a parent object.
 
 ```js
     const spaceship = {
       telescope: {
         yearBuilt: 2018,
         model: '91031-XLT',
-        focalLength: 2032 
+        focalLength: 2032
       },
       crew: {
-        captain: { 
-          name: 'Sandra', 
-          degree: 'Computer Engineering', 
-          encourageTeam() { console.log('We got this!') } 
+        captain: {
+          name: 'Sandra',
+          degree: 'Computer Engineering',
+          encourageTeam() { console.log('We got this!') }
         }
       },
       engine: {
@@ -674,32 +654,28 @@ We can nest other objects too, like telescope, or group computer-related details
       }
     };
 ```
-You can chain operators to access nested properties.
-At each level, choose the operator that matches the data type you’re working with.
-A helpful strategy is to evaluate the expression left to right—like the computer does—so each step is smaller and easier to follow.
+
+You can chain operators to access nested properties. At each level, choose dot or bracket notation to match the key. Evaluate left to right, like the interpreter:
 
 ```js
-  spaceship.nanoelectronics['back-up'].battery; // Returns 'Lithium'
+spaceship.nanoelectronics['back-up'].battery; // Returns 'Lithium'
 ```
-In that code:
 
-The computer first evaluates spaceship.nanoelectronics, which returns an object containing back-up and computer.
-Next, ['back-up'] accesses the back-up object.
-Then, .battery reads the battery property on that object and returns 'Lithium'.
+The computer first evaluates `spaceship.nanoelectronics`, which returns an object containing `back-up` and `computer`. Next, `['back-up']` accesses the `back-up` object. Then `.battery` reads the `battery` property and returns `'Lithium'`.
 
 ```js
-    let spaceship = {
-  // Heres a kev value pair in js nested objects
+let spaceship = {
+  // Example: key–value pairs in nested objects
   passengers: [{name: 'Space Dog'}],
   telescope: {
     yearBuilt: 2018,
     model: "91031-XLT",
-    focalLength: 2032 
+    focalLength: 2032
   },
   crew: {
-    captain: { 
-      name: 'Sandra', 
-      degree: 'Computer Engineering', 
+    captain: {
+      name: 'Sandra',
+      degree: 'Computer Engineering',
       encourageTeam() { console.log('We got this!') },
      'favorite foods': ['cookies', 'cakes', 'candy', 'spinach'] }
   },
@@ -724,29 +700,29 @@ let firstPassenger = spaceship.passengers[0];
 
 ```
 
-# Pass By Reference
-## 04/07/2026
+#### Pass By Reference
 
-Pass by reference means when you pass a variable assigned to an object into a function as a argument
-the computer interperts the parameter name as pointing to the space in memory holding that object, As a result functions that change ob ject poperties actually mutaute the object permanently
-even when the object is assigned to a const_ variable
+When you pass a variable that holds an object into a function, the parameter refers to the **same object in memory**. Functions that change object properties **mutate** that object permanently, even when the outer variable was declared with `const`.
 
 ```js
 const spaceship = {
   homePlanet : 'Earth',
   color : 'silver'
 };
- 
+
 let paintIt = obj => {
   obj.color = 'glorious gold'
 };
- 
+
 paintIt(spaceship);
- 
+
 spaceship.color // Returns 'glorious gold'
- 
+
 ```
-# Looping over objects
+
+#### Looping Through Objects
+
+You already know how to iterate arrays by index; object key–value pairs are not ordered by position. JavaScript gives you ways to iterate objects, including `for...in` and helpers that return arrays you can use with `for...of`.
 
 **`for...in`** iterates over enumerable **keys** (watch out for inherited keys on plain objects; many style guides prefer the approaches below for “own” properties only).
 
@@ -774,13 +750,134 @@ for (const [key, value] of Object.entries(meal)) {
 }
 ~~~
 
-#### Quick comparison: arrays vs objects
+##### Quick comparison: arrays vs objects
 
 | | **Array** | **Object** |
 |---|-----------|--------------|
 | Order | Ordered (indices `0`, `1`, …) | Unordered (named keys) |
 | Access | `arr[0]` | `obj.key` or `obj["key"]` |
 | Typical use | Lists of similar items | Records, maps, things with named fields |
+
+#### Review
+
+- **Literals** — use `{ }` for object literals; keys and values are **properties**.
+- **Access** — **dot notation** for valid identifiers; **bracket notation** for dynamic or non-identifier keys.
+- **Assignment** — mutate with `.` or `[]`; `const` still allows changing the object’s contents (not rebinding the variable).
+- **Methods** — properties whose values are functions; call with `obj.method()`.
+- **Nesting** — chain `.` and `[]` to reach inner values.
+- **Pass by reference** — objects passed into functions refer to the same data in memory.
+- **Loops** — `for...in`, or `Object.keys` / `Object.values` / `Object.entries` with `for...of`.
+
+For a full chapter recap (arrays, loops, and objects), see **Chapter 4 summary** below.
+
+---
+
+### Advanced Objects
+
+Lesson topics (outline only — add your own notes and examples as you work through the material).
+
+#### Advanced Objects Introduction
+
+How objects behave in more depth: execution context, encapsulation, and common patterns beyond simple literals.
+
+#### The this Keyword
+Objects are Collections of related data and functionality. You store that functionality.
+
+In methods and functions, **`this`** refers to a context (often the object a method was called on). Its value depends on **how** the function is invoked.
+
+Remember that objects in javascript are like contianers which store data and functionality, you will build upon fundamentals of creating objects and explore some advanced conecpts.
+
+Such as,
+using the this keyword
+Preview: Docs Loading link description keyword
+conveying privacy in JavaScript methodsw
+defining getters and setters in objects
+creating factory functions using destructuring techniques
+Preview: Docs Loading link description techniques
+
+Objects are collections of related data and functionality. You store functionality in methods in our objects.
+
+Heres an example of an object using the this keyword
+```js
+const goat = {
+  dietType: 'herbivore',
+  makeSound() {
+    console.log('baaa');
+  },
+  diet() {
+    console.log(this.dietType);
+  }
+};
+
+goat.diet(); 
+// Output: herbivore
+```
+Above is an example of the goat object being used with a makeSound() method. with the this keyword
+
+```js
+goat.makeSound(); // Prints baaa
+```
+
+#### Arrow Functions and this
+For a method, the calling object is the object the method belongs to. If we use the this keyword
+Preview: Docs It is often used within an object method, but what it refers to will vary depending on the execution context. in a method, then the value of this is the calling object. However, it becomes a bit more complicated when we start using arrow functions Preview: Docs Loading link description for methods Preview: Docs Loading link description
+. Take a look at the example below:
+```js
+const goat = {
+  dietType: 'herbivore',
+  makeSound() {
+    console.log('baaa');
+  },
+  diet: () => {
+    console.log(this.dietType);
+  }
+};
+
+goat.diet(); // Prints undefined
+
+```
+**Arrow functions** do not have their own **`this`** binding; they inherit **`this`** from the surrounding scope. That differs from regular functions and affects how you write methods and callbacks.
+This si an example of the this keyword not being used with arrow functions.
+```js
+const robot = {
+  model: '1E78V2',
+  energyLevel: 100,
+  provideInfo() {
+    return `I am ${this.model} and my current energy level is ${this.energyLevel}.`
+  }
+};
+
+console.log(robot.provideInfo());
+// Outputs I am 1E78V2 and my current energy level is 100.
+```
+
+#### Privacy
+
+Patterns for hiding implementation details: e.g. variables in closures, naming conventions, and (in modern JS) **`#` private fields** on classes. Goal: control what code outside an object can read or change.
+
+#### Getters
+
+**Getters** (`get name() { … }` in object literals or classes) let you read a property-like value while running logic behind the scenes.
+
+#### Setters
+
+**Setters** (`set name(value) { … }`) run when you assign to a property, so you can validate or update related state.
+
+#### Factory Functions
+
+A **factory function** returns a new object (often configured by arguments). Useful for creating many similar objects without `new` or classes.
+
+#### Property Value Shorthand
+
+When a variable name matches the property name, you can write **`{ x }`** instead of **`{ x: x }`** in object literals.
+
+#### Destructured Assignment
+
+**Destructuring** pulls properties out of an object into variables: **`const { a, b } = obj`**. Also works in parameters and nested objects.
+
+#### Built-in Object Methods
+
+Static helpers on **`Object`** (and related APIs), such as **`Object.assign`**, **`Object.freeze`**, **`Object.create`**, **`Object.hasOwn`**, and the **`Object.keys` / `values` / `entries`** family you already use for iteration.
 
 ---
 
@@ -837,3 +934,4 @@ When you review your notes, briefly summarize what you learned and what is impor
 - `break` lets you exit a loop early once a condition is met; `continue` skips the rest of one iteration.
 - **Objects** group data as **key–value** **properties**; use **`{}`** for literals.
 - Read and update properties with **dot notation** or **bracket notation**; loop with **`for...in`** or **`Object.keys` / `Object.entries`**.
+- **Advanced objects** (later): **`this`**, getters/setters, privacy patterns, factory functions, shorthand and destructuring, and built-in **`Object`** methods.
