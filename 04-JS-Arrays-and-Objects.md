@@ -838,6 +838,7 @@ goat.diet(); // Prints undefined
 ```
 **Arrow functions** do not have their own **`this`** binding; they inherit **`this`** from the surrounding scope. That differs from regular functions and affects how you write methods and callbacks.
 This si an example of the this keyword not being used with arrow functions.
+
 ```js
 const robot = {
   model: '1E78V2',
@@ -852,12 +853,64 @@ console.log(robot.provideInfo());
 ```
 
 #### Privacy
+Accessing and updating Properties is fundamental in working with obkects. Altho there are some cases in which we dont want other code simply accessing and updating an object's properties. with privacy in objects you can define it as the idea that only certain properties should be mutable or able to change in value. Certain Languages have privacy 
 
 Patterns for hiding implementation details: e.g. variables in closures, naming conventions, and (in modern JS) **`#` private fields** on classes. Goal: control what code outside an object can read or change.
+
+```js
+const robot = {
+  _energyLevel: 100,
+  recharge(){
+    this._energyLevel += 30;
+    console.log(`Recharged! Energy is currently at ${this._energyLevel}%.`)
+  }
+};
+
+robot._energyLevel = 'high';
+robot.recharge();
+```
 
 #### Getters
 
 **Getters** (`get name() { … }` in object literals or classes) let you read a property-like value while running logic behind the scenes.
+Getters are methods that get and return the internal properties of an object but they can do more than just retrieve the value of a property!
+Here is an example of a getter method:
+```js
+const person = {
+  _firstName: 'John',
+  _lastName: 'Doe',
+  get fullName() {
+    if (this._firstName && this._lastName){
+      return `${this._firstName} ${this._lastName}`;
+    } else {
+      return 'Missing a first name or a last name.';
+    }
+  }
+}
+
+// To call the getter method: 
+person.fullName; // 'John Doe'
+
+```
+Notice that in the getter method above:
+
+We use the get keyword followed by a method name and a function body.
+We use an if...else conditional to check if both _firstName and _lastName exist (by making sure they both return truthy values) and then return a different value depending on the result.
+We can access the calling object’s internal properties using 
+this
+Preview: Docs Loading link description
+. In fullName, we’re accessing both this._firstName and this._lastName.
+In the last line, we call fullName on person. In general, getter methods do not need to be called with a set of parentheses. Syntactically, it looks like we’re accessing a property.
+Now that we’ve gone over syntax, let’s discuss some notable advantages of using getter methods:
+
+Getters can perform an action on the data when getting a property.
+Getters can return different values using 
+conditionals
+Preview: Docs Loading link description
+.
+In a getter, we can access the properties of the calling object using this.
+The functionality of our code is easier for other developers to understand.
+Another thing to keep in mind when using getter (and setter) methods is that properties cannot share the same name as the getter/setter function. If we do so, then calling the method will result in an infinite call stack error. One workaround is to add an underscore before the property name, like we did in the example above.
 
 #### Setters
 
