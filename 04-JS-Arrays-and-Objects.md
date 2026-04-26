@@ -872,9 +872,11 @@ robot.recharge();
 
 #### Getters
 
-**Getters** (`get name() { … }` in object literals or classes) let you read a property-like value while running logic behind the scenes.
 Getters are methods that get and return the internal properties of an object but they can do more than just retrieve the value of a property!
 Here is an example of a getter method:
+
+**Getters** (`get name() { … }` in object literals or classes) let you read a property-like value while running logic behind the scenes.
+
 ```js
 const person = {
   _firstName: 'John',
@@ -912,10 +914,67 @@ In a getter, we can access the properties of the calling object using this.
 The functionality of our code is easier for other developers to understand.
 Another thing to keep in mind when using getter (and setter) methods is that properties cannot share the same name as the getter/setter function. If we do so, then calling the method will result in an infinite call stack error. One workaround is to add an underscore before the property name, like we did in the example above.
 
+Here is another example of using a getter again
+
+```js
+const robot = {
+  _model: '1E78V2',
+  _energyLevel: 100,
+  get energyLevel() { 
+    if (typeof this._energyLevel === 'number') {
+      return 'My current energy level is ' + this._energyLevel
+    } else {
+      return "System malfunction: cannot retrieve energy level"
+    }
+  }
+};
+
+console.log(robot.energyLevel);
+```
+
 #### Setters
+
+! The same way you use getters you also have setters you can create setter methods which can reassign values of existing properties with an object
 
 **Setters** (`set name(value) { … }`) run when you assign to a property, so you can validate or update related state.
 
+Heres an example of using a Setter
+
+```js
+  const person = {
+    _age: 37,
+    set age(newAge){
+      if (typeof newAge === 'number'){
+        this._age = newAge;
+      } else {
+        console.log('You must assign a number to age');
+      }
+    }
+  };
+
+```
+In this example you are preforming a check for what the value is being assigned to this._age.
+
+When you use the setter method the only values that are numbers will be assigned to this._age.
+
+There are different outputs depending on what values are used to reassign this._age.
+
+```js
+person.age = 40;
+console.log(person._age); // Logs: 40
+person.age = '40'; // Logs: You must assign a number to age
+```
+Setter methods like age do not need to be called with a set of parentheses. Syntactically, it looks like you,
+are reasssigning the value of a property
+
+Similar to Getter methods there are similar advantages to using setter methods that include checcking input, preforming actions on properties, and
+desiplaying a clear intention for how the object is supposed to be used. Even with a setter method it is still possible to directly reassign properties,
+For example, in the example above you can still set ._age directly
+Like this 
+```js
+person._age = 'forty-five'
+console.log(person._age); // Prints forty-five
+```
 #### Factory Functions
 
 A **factory function** returns a new object (often configured by arguments). Useful for creating many similar objects without `new` or classes.
