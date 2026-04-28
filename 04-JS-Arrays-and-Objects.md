@@ -964,28 +964,82 @@ person.age = 40;
 console.log(person._age); // Logs: 40
 person.age = '40'; // Logs: You must assign a number to age
 ```
-Setter methods like age do not need to be called with a set of parentheses. Syntactically, it looks like you,
-are reasssigning the value of a property
 
-Similar to Getter methods there are similar advantages to using setter methods that include checcking input, preforming actions on properties, and
-desiplaying a clear intention for how the object is supposed to be used. Even with a setter method it is still possible to directly reassign properties,
-For example, in the example above you can still set ._age directly
-Like this 
+Setter methods like age do not need to be called with a set of parentheses. Syntactically, it looks like you,
+are reasssigning the value of a property Similar to Getter methods there are similar advantages to using setter methods that include checcking input, preforming actions on properties, and desiplaying a clear intention for how the object is supposed to be used. Even with a setter method it is still possible to directly reassign properties, For example, in the example above you can still set ._age directly Like this
+
 ```js
 person._age = 'forty-five'
 console.log(person._age); // Prints forty-five
 ```
+
 #### Factory Functions
 
 A **factory function** returns a new object (often configured by arguments). Useful for creating many similar objects without `new` or classes.
 
+! So far you have been creating objects individually but there are times when you want to create instances of an object quickly, This is when factory functions come in. A real-world factory manufactures multiple copies of an item quickly and on a massive scale. A factory function is a function that returns an object and can be resused to make multiple instance. Factory Functions can also have parameters, allowing us to customize the object that gets returned.
+
+For example imagine that you want you wanted to create an object to repersent monsters in javascript. There are many different types of monsteres, and you could go about making each monster individually, but you could use a factory function to make it easier. To achieve this idea of making multiple monster objects, you can use a factory function that has paramerters: 
+
+Here s an example of a Factory Function
+```js
+const monsterFactory = (name, age, energySource, catchPhrase) => {
+  return { 
+    name: name,
+    age: age, 
+    energySource: energySource,
+    scare() {
+      console.log(catchPhrase);
+    } 
+  }
+};
+
+```
+Here is another example of using a Factory Function with only two methods
+
+```js
+const robotFactory = (model, mobile) => {
+  return {
+    model : model,
+		mobile: mobile,
+		beep () { 
+      console.log('Beep Boop'); 
+    }
+	};
+};
+
+const tinCan = robotFactory('P-500', true);
+tinCan.beep();
+```
 #### Property Value Shorthand
 
 When a variable name matches the property name, you can write **`{ x }`** instead of **`{ x: x }`** in object literals.
 
+Es6 introduced some new shortcuts for assigning porperties to variables known as destructing. In the last lesson you learnt how to create a factory function that helped us create objects. You had to assign each property a key and value, even though the key name was the same as the parameter name you assigned to it To remind our seleves heres an example of a factory function 
+
+```js
+const monsterFactory = (name, age) => {
+  return { 
+    name: name,
+    age: age
+  }
+};
+
+```
+
 #### Destructured Assignment
 
 **Destructuring** pulls properties out of an object into variables: **`const { a, b } = obj`**. Also works in parameters and nested objects.
+
+And here is an example of Object Destructuring
+```js
+const car = { make: 'Toyota', model: 'Camry', year: 2021 };
+const { make, model } = car;
+
+console.log(make); // Output: Toyota
+console.log(model); // Output: Camry
+
+```
 
 #### Built-in Object Methods
 
