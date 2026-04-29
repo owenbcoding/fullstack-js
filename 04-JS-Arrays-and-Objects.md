@@ -872,7 +872,7 @@ robot.recharge();
 
 #### Getters
 
-Getters are methods that get and return the internal properties of an object but they can do more than just retrieve the value of a property!
+Getters are methods that get and return the internal properties of an object, but they can do more than just retrieve the value of a property.
 Here is an example of a getter method:
 
 **Getters** (`get name() { … }` in object literals or classes) let you read a property-like value while running logic behind the scenes.
@@ -898,23 +898,18 @@ Notice that in the getter method above:
 
 We use the get keyword followed by a method name and a function body.
 We use an if...else conditional to check if both _firstName and _lastName exist (by making sure they both return truthy values) and then return a different value depending on the result.
-We can access the calling object’s internal properties using 
-this
-Preview: Docs Loading link description
-. In fullName, we’re accessing both this._firstName and this._lastName.
-In the last line, we call fullName on person. In general, getter methods do not need to be called with a set of parentheses. Syntactically, it looks like we’re accessing a property.
+We can access the calling object’s internal properties using **this**.
+In **fullName**, we’re accessing both **this._firstName** and **this._lastName**.
+In the last line, we call **fullName** on **person**. In general, getter methods do not need to be called with parentheses. Syntactically, it looks like we’re accessing a property.
 Now that we’ve gone over syntax, let’s discuss some notable advantages of using getter methods:
 
 Getters can perform an action on the data when getting a property.
-Getters can return different values using 
-conditionals
-Preview: Docs Loading link description
-.
-In a getter, we can access the properties of the calling object using this.
+Getters can return different values using **conditionals**.
+In a getter, we can access the properties of the calling object using **this**.
 The functionality of our code is easier for other developers to understand.
 Another thing to keep in mind when using getter (and setter) methods is that properties cannot share the same name as the getter/setter function. If we do so, then calling the method will result in an infinite call stack error. One workaround is to add an underscore before the property name, like we did in the example above.
 
-Here is another example of using a getter again
+Here is another example of a getter:
 
 ```js
 const robot = {
@@ -934,11 +929,11 @@ console.log(robot.energyLevel);
 
 #### Setters
 
-! The same way you use getters you also have setters you can create setter methods which can reassign values of existing properties with an object
+The same way you use getters, you can create **setter** methods that reassign values on existing properties **within** an object.
 
 **Setters** (`set name(value) { … }`) run when you assign to a property, so you can validate or update related state.
 
-Heres an example of using a Setter
+Here’s an example of using a setter:
 
 ```js
   const person = {
@@ -953,11 +948,11 @@ Heres an example of using a Setter
   };
 
 ```
-In this example you are preforming a check for what the value is being assigned to this._age.
+In this example you are performing a check on whatever value is assigned to **this._age**.
 
-When you use the setter method the only values that are numbers will be assigned to this._age.
+Only values of type **`number`** are written to **this._age**.
 
-There are different outputs depending on what values are used to reassign this._age.
+The logged result depends on which value you assign to **this._age**.
 
 ```js
 person.age = 40;
@@ -965,8 +960,9 @@ console.log(person._age); // Logs: 40
 person.age = '40'; // Logs: You must assign a number to age
 ```
 
-Setter methods like age do not need to be called with a set of parentheses. Syntactically, it looks like you,
-are reasssigning the value of a property Similar to Getter methods there are similar advantages to using setter methods that include checcking input, preforming actions on properties, and desiplaying a clear intention for how the object is supposed to be used. Even with a setter method it is still possible to directly reassign properties, For example, in the example above you can still set ._age directly Like this
+Setter methods such as **`age`** are not invoked with parentheses. Syntactically, assigning looks like **`person.age = value`**, similar to assigning a plain property.
+
+As with getters, setters give you advantages such as validating input, running side effects before or after assignments, and making the object’s intended use clear. That said, callers can often still bypass a setter—for example, by assigning to **`person._age`** directly, like this:
 
 ```js
 person._age = 'forty-five'
@@ -977,11 +973,11 @@ console.log(person._age); // Prints forty-five
 
 A **factory function** returns a new object (often configured by arguments). Useful for creating many similar objects without `new` or classes.
 
-! So far you have been creating objects individually but there are times when you want to create instances of an object quickly, This is when factory functions come in. A real-world factory manufactures multiple copies of an item quickly and on a massive scale. A factory function is a function that returns an object and can be resused to make multiple instance. Factory Functions can also have parameters, allowing us to customize the object that gets returned.
+So far you have been creating objects individually, but sometimes you want to create many instances quickly; that’s what factory functions are for. In the real world, a factory churns out many copies of a product efficiently. Likewise, a **factory function** is a function that returns an object and can be reused to build many instances. Factory functions can take parameters so each returned object can differ.
 
-For example imagine that you want you wanted to create an object to repersent monsters in javascript. There are many different types of monsteres, and you could go about making each monster individually, but you could use a factory function to make it easier. To achieve this idea of making multiple monster objects, you can use a factory function that has paramerters: 
+Suppose you wanted objects to represent monsters in JavaScript. There could be many types of monsters—you could declare each monster by hand—but a factory makes it manageable. The factory accepts parameters that describe each monster.
 
-Here s an example of a Factory Function
+Here’s an example of a factory function:
 ```js
 const monsterFactory = (name, age, energySource, catchPhrase) => {
   return { 
@@ -995,17 +991,17 @@ const monsterFactory = (name, age, energySource, catchPhrase) => {
 };
 
 ```
-Here is another example of using a Factory Function with only two methods
+Here is another example—a factory function with two arguments and two properties:
 
 ```js
 const robotFactory = (model, mobile) => {
   return {
-    model : model,
-		mobile: mobile,
-		beep () { 
-      console.log('Beep Boop'); 
+    model: model,
+    mobile: mobile,
+    beep() {
+      console.log('Beep Boop');
     }
-	};
+  };
 };
 
 const tinCan = robotFactory('P-500', true);
@@ -1015,7 +1011,9 @@ tinCan.beep();
 
 When a variable name matches the property name, you can write **`{ x }`** instead of **`{ x: x }`** in object literals.
 
-Es6 introduced some new shortcuts for assigning porperties to variables known as destructing. In the last lesson you learnt how to create a factory function that helped us create objects. You had to assign each property a key and value, even though the key name was the same as the parameter name you assigned to it To remind our seleves heres an example of a factory function 
+ES6 added **property value shorthand**: when an object literal’s property name matches an in-scope variable, you may omit the `: value` and write the identifier once.
+
+Earlier you wrote factory functions that repeated each pair—**`name: name`**, **`age: age`**—even though each key matched the parameter name:
 
 ```js
 const monsterFactory = (name, age) => {
@@ -1027,11 +1025,45 @@ const monsterFactory = (name, age) => {
 
 ```
 
+If you add more fields, repeating every pair gets tedious; shorthand keeps the literals shorter. Apply it whenever the parameter (or variable) name is the same as the property key.
+
+Here’s the same factory using shorthand:
+```js
+const monsterFactory = (name, age) => {
+  return { 
+    name,
+    age 
+  }
+};
+```
 #### Destructured Assignment
 
 **Destructuring** pulls properties out of an object into variables: **`const { a, b } = obj`**. Also works in parameters and nested objects.
 
-And here is an example of Object Destructuring
+Sometimes you might want to copy values out of an object into separate variables.
+
+For example:
+
+```js
+const vampire = {
+  name: 'Dracula',
+  residence: 'Transylvania',
+  preferences: {
+    day: 'stay inside',
+    night: 'satisfy appetite'
+  }
+};
+
+```
+This pulls out **residence** by hand:
+
+```js
+const residence = vampire.residence; 
+console.log(residence); // Prints 'Transylvania' 
+```
+
+Destructuring achieves the same in one declaration:
+
 ```js
 const car = { make: 'Toyota', model: 'Camry', year: 2021 };
 const { make, model } = car;
