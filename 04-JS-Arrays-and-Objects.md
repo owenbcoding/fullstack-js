@@ -1007,6 +1007,7 @@ const robotFactory = (model, mobile) => {
 const tinCan = robotFactory('P-500', true);
 tinCan.beep();
 ```
+
 #### Property Value Shorthand
 
 When a variable name matches the property name, you can write **`{ x }`** instead of **`{ x: x }`** in object literals.
@@ -1036,13 +1037,11 @@ const monsterFactory = (name, age) => {
   }
 };
 ```
-#### Destructured Assignment
+#### Destructuring Assignment
 
-**Destructuring** pulls properties out of an object into variables: **`const { a, b } = obj`**. Also works in parameters and nested objects.
+**Destructuring assignment** pulls values out of **objects** or **arrays** into variables using a pattern on the left of **`=`**. For objects it looks like **`const { a, b } = obj`**; for arrays, **`const [first, second] = arr`** (this section sticks to object patterns). The same **`{ … }`** pattern appears in **function parameters**, and nesting on the left can mirror nesting on the right (`{ outer: { inner } }`).
 
-Sometimes you might want to copy values out of an object into separate variables.
-
-For example:
+**`vampire`**: plain property reads, then destructuring:
 
 ```js
 const vampire = {
@@ -1054,28 +1053,55 @@ const vampire = {
   }
 };
 
-```
-This pulls out **residence** by hand:
+const residenceManual = vampire.residence;
+console.log(residenceManual); // Prints 'Transylvania'
 
-```js
-const residence = vampire.residence; 
-console.log(residence); // Prints 'Transylvania' 
+const { residence } = vampire;
+console.log(residence); // Prints 'Transylvania'
+
+// Nested: pattern on the left mirrors the object (`preferences` holds `{ day, night }`).
+const { preferences: { day, night } } = vampire;
+console.log(day); // stay inside
 ```
 
-Destructuring achieves the same in one declaration:
+You can bind several keys in one pattern; only those names become variables (everything else stays on the object):
 
 ```js
 const car = { make: 'Toyota', model: 'Camry', year: 2021 };
 const { make, model } = car;
 
-console.log(make); // Output: Toyota
-console.log(model); // Output: Camry
+console.log(make); // Toyota
+console.log(model); // Camry
+```
 
+**Another example:** **`functionality`** is a nested object on **`robot`**. Destructuring assigns that whole nested object into a variable **`functionality`**, then you call its methods normally:
+
+```js
+const robot = {
+  model: '1E78V2',
+  energyLevel: 100,
+  functionality: {
+    beep() {
+      console.log('Beep Boop');
+    },
+    fireLaser() {
+      console.log('Pew Pew');
+    },
+  },
+};
+
+const { functionality } = robot;
+
+functionality.beep();
 ```
 
 #### Built-in Object Methods
 
 Static helpers on **`Object`** (and related APIs), such as **`Object.assign`**, **`Object.freeze`**, **`Object.create`**, **`Object.hasOwn`**, and the **`Object.keys` / `values` / `entries`** family you already use for iteration.
+
+In earlier examples you mostly defined your own objects and methods. Typical **`{}`** literals also get **instance** methods from **`Object.prototype`** (**`hasOwnProperty`**, **`valueOf`**, and others), and **`Object`** exposes **static helpers** such as **`Object.keys`**, **`Object.entries`**, and **`Object.assign`**.
+
+For reference, Mozilla has a consolidated list here: [`Object` constructor methods (MDN)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object#methods_of_the_object_constructor).
 
 ---
 
