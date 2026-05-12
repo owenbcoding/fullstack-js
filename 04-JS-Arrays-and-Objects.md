@@ -1155,6 +1155,14 @@ Preview: Docs Loading link description
 There are different ways to use object destructuring: one way is the property value shorthand and another is destructured assignment.
 As with any concept, it is a good skill to learn how to use the documentation with objects!
 
+If you want to challenge yourself:
+
+Find the value of this within a method.
+Learn the outcome of using a property that has the exact same name as a setter/getter method.
+Create a new factory function that can create object instances of your choice.
+Read documentation on other destructuring techniques and apply them to your code.
+Try out other built-in object methods and learn what they do.
+
 ---
 
 ## Vocab
