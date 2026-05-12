@@ -1103,6 +1103,30 @@ In earlier examples you mostly defined your own objects and methods. Typical **`
 
 For reference, Mozilla has a consolidated list here: [`Object` constructor methods (MDN)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object#methods_of_the_object_constructor).
 
+```js
+const robot = {
+	model: 'SAL-1000',
+  mobile: true,
+  sentient: false,
+  armor: 'Steel-plated',
+  energyLevel: 75
+};
+
+// What is missing in the following method call?
+const robotKeys = Object.keys(robot);
+
+console.log(robotKeys);
+
+// Declare robotEntries below this line:
+const robotEntries = Object.entries(robot)
+console.log(robotEntries);
+
+// Declare newRobot below this line:
+const newRobot = Object.assign({laserBlaster: true, voiceRecognition: true}, robot);
+
+console.log(newRobot);
+```
+
 Let’s review the concepts covered in this lesson:
 
 The object that a method belongs to is called the calling object.
@@ -1114,7 +1138,7 @@ Methods
 Preview: Docs Loading link description
  do not automatically have access to other internal properties of the calling object.
 The value of this depends on where the this is being accessed from.
-We cannot use 
+We cannot use
 arrow functions
 Preview: Docs Loading link description
  as methods if we want to access other internal properties.
